@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Naoki Yokoyama</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Favicon-->
+		<link rel="icon" type="../image/png" href="../img/favicon.png">
+		<!--CSS Links-->
+    <link rel="stylesheet" href="../css/navbar.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<!--Scripts-->
+    <script type="text/javascript" src="../js/analytics.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+		<script type="text/javascript" src="../js/portfolio.js"></script>
+		<style>
+			.wrapper {
+				padding: 0px 10% 0px 10%;
+			}
+			.videoWrapper {
+				position: relative;
+				padding-bottom: 56.25%; /* 16:9 */
+				padding-top: 25px;
+				height: 0;
+			}
+			.videoWrapper iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<!--Navbar begins-->
+     <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="../index.html"><li>Home</li></a>
+          <a href="index.html"><li>Portfolio</li></a>
+          <a href="../about_me.html"><li>About Me</li></a>
+          <a href="website.html"><li>This Site</li></a>
+          <a href="../img/resume.pdf"><li>Resume</li></a>
+          <a href="../cs.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="navbar navbar-inverse navbar-static-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../about_me.html">The Author</a></li>
+                <li><a href="portfolio/website.html">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../cs.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<center>
+									<h2>SmileLock</h2>
+								</center>
+							</div>
+				
+
+							<div class="wrapper">
+								<div class="videoWrapper">
+									<iframe src="https://www.youtube.com/embed/-BAcTRco1Ug" frameborder="0" allowfullscreen></iframe>
+								</div>
+							</div>
+							<h3>Wireless Wearable Locking System for the Elderly</h3>
+							<p class="fontsize">
+								This was designed as a final project for my Assistive Robotics course. The senior resident would have a wearble which would allow them to communicate with those who come to the door. The idea was to also have a camera in place that would be able to recognize visitors who are either on a whitelist or blacklist to expedite the process of letting vistiors through the front door.
+								<br><br>
+								I was in charge of designing and programming the mock-up shown in the video above. It uses two of Nordic's nRF24l01 chips to transmit audio in real time. I was able to implement a high enough sampling rate to prevent the voices from getting too distorted.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+			
+		<script src="../js/bootstrap.js"></script>
+	</body>
+</html>

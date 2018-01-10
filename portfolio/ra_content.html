@@ -1,0 +1,114 @@
+<div class="row">
+	<div class="col-sm-1"></div>
+	<div class="col-sm-10">
+		<div class="panel panel-default">
+			<div class="panel-body">
+
+				<div class="page-header">
+					<center>
+						<h2>Robot Arm</h2>
+					</center>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-5">
+						<br>
+						<img width="100%" src="../img/ra/full.jpg">
+					</div>
+				
+					<div class="col-xs-7">
+						<center>
+							<img width="90%" src="../img/ra/ra_team.jpg">
+							<img width="90%" src="../img/ra/ra.jpg">
+						</center>
+					</div>
+				</div>
+
+				<br>
+				<h3>Science Olympiad</h3>
+				<p class="fontsize">The Robot Arm was a project I built with friends as an Event Leader during junior and senior year in high school. It was entered into the New York Science Olympiad competitions where it placed 8th at both the regional and state level.</p>
+
+				<!-- <br> -->
+				<h3>Autonomous Mode</h3>
+				<p class="fontsize">The arms were equipped with potentiometers to monitor the angle of each joint, allowing it to move to any specific position regardless of initial position.</p>
+
+				<!-- <br> -->
+				<h3>Potentiometers - Multiple motors at once:</h3>
+				<br>
+				<div class="wrapper">
+					<div class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/um7KYoVBgMM" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				
+				<!-- <br> -->
+				<h3>Potentiometers - One motor at a time:</h3>
+				<div class="wrapper">
+					<div class="videoWrapper">
+						<iframe src="https://www.youtube.com/embed/J90G4IpImrQ" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+				
+				<!-- <br> -->
+				<h3>Rheostatic braking</h3>
+				<br>
+				<center>
+					<img src="../img/ra/brake.jpg" alt=""width="45%">
+				</center>
+				<br>
+				<p class="fontsize">When the motors weren't powered, their terminals were shunted (joined) together for braking. Without braking, the arm would always keep drooping if it wasn't actively being raised. Because we had decided to use a microcontroller we could shunt the terminals with a relay while simulataneously cutting power to the motors to prevent short circuits.</p>
+
+				<!-- <br> -->
+				<h3>Speed and direction control</h3>
+				<br>
+
+				<div class="col-sm-5">
+					<div class="hidden-sm hidden-xs">
+						<img src="../img/ra/circuit1.jpg" alt=""width="100%">
+					</div>
+					<div class="visible-sm visible-xs">
+						<center>
+							<img src="../img/ra/circuit1.jpg" alt=""width="55%">
+						</center>
+					</div>
+					<center><i>Not pictured: all the time-consuming solder-traces on the underside...</i></center>
+				</div>
+
+				<div class="col-sm-6">
+					<img src="../img/ra/schematic.png" alt=""width="100%">
+					<br>
+					<p class="fontsize">The speed of each motor was controlled with NPN BJT transistors using PWM waves from the microcontroller. To control the direction of (current through) the motor, DPDT relays were used (black). SPST relays were used to facilitate the braking (blue).</p>
+				</div>
+				<div class="col-sm-10">
+
+				<br>
+				<h3>Microcontroller and Power</h3>
+				<br>
+				</div>
+				<center>
+					<img src="../img/ra/box.jpg" alt=""width="60%"><br>
+					<i>Not pictured: all the time-consuming solder-traces on the underside...</i>
+				</center>
+				<br>
+				<p class="fontsize">The arms were controlled with an Arduino Mega, powered by four 7.2V 2800mAh batteries in parallel. During driver practice, the batteries were replaced with three 9V 0.7A AC-DC wall adapters (parallel, using a powerstrip haha) for indefinite operation time.</p>
+				
+				<!-- <br> -->
+				<h3>Controls</h3>
+				<br>
+				<center>
+					<img src="../img/ra/control_box.jpg" alt=""width="60%">
+					<br>
+				</center>
+				<br>
+				<p class="fontsize">The two identical control boxes made for the arms might've been my favorite part of this project. The holes made for mounting the switches/buttons were made using a CNC mill!! We wasted so many boxes with innaccurate hand-drilling and drill-pressing that we finally resorted to the most precise way possible. The boxes were also super lightweight, containing only resistors inside. In order to make the boxes even more portable, we used Ethernet cables and hacked Ethernet female ports to connect the boxes to the Arduino. This way we were able to use an 8-conductor connection in a neat, easily replaceable fashion.</p>
+				<br>	
+				<center>
+					<img src="../img/ra/box_internals.jpg" alt=""width="60%">
+					<i></i>
+				</center>
+			</div>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,116 @@
+<div class="row">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-10">
+		<div class="panel panel-default">
+			<div class="panel-body">
+
+				<div class="page-header">
+					<center>
+						<h2>Quadcopter</h2>
+					</center>
+				</div>
+
+				<img src="../img/quad/full.jpg" alt="" class="featuredimg" width="100%">
+				
+				<h3>Why?</h3>
+				<br>
+				<p class="fontsize">
+					The quadcopter is a project I started with friends after the robot arm just before entering college. Interested in the versatility and acrobatics of the seemingly simple UAV I built one from scratch to fully understand it.
+				</p>
+
+				<!-- <br> -->
+				<h3>Microcontroller and Sensors</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/openInternals.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					The quad is powered by a Teensy 3.1 ARM microcontroller coded in Arduino and an IMU that are stored within the central piece. The Teensy communicates with the IMU via I2C. 
+				</p>
+				
+				<!-- <br> -->
+				<h3>Really Compact!</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/boards.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					On the left is the 10-degrees-of-freedom Inertial Measurement Unit. It consists of a triple-axis accelerometer, gyroscope, and magnetometer, along with a barometer for altitude control (for a total of 10 DOF). On the right is the ultra-fast ARM processor!
+				</p>
+
+				<!-- <br> -->
+				<h3>Data and Power Supply</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/pcb.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					I soldered together a small PCB to hold the MEMS sensors and microcontroller in place. An intermediate voltage regulator steps down the battery voltage so it can then be handled by the weaker regulator on the Teensy.
+				</p>
+
+				<!-- <br> -->
+				<h3>Detachable, Debuggable</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/breadboard.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					Male header pins soldered to the board's underside let it attach to a mini breadboard within the quadcopter. So not only are each of the chips removable, but the entire setup can be taken out and tested for debugging.
+				</p>
+				
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/inside.jpg" width="75%">
+				</center>
+
+				<center><i>The boards within the quad</i></center>
+
+				<!-- <br> -->
+				<h3>Electronic Speed Controller (ESC)</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/esc.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					Each motor's speed is controlled by a Q Brain quadruple ESC using PWM outputs from the microcontroller. Rotational direction cannot be changed without rewiring the motors.
+				</p>
+
+				<!-- <br> -->
+				<h3>Transmission Reading via ISRs</h3>
+				<br>
+				<center>
+					<img alt="Quad" src="../img/quad/receiver.jpg" width="75%">
+				</center>
+				<br>
+				<p class="fontsize">
+					The quadcopter receives input from a 2.4 GHz RF 6 channel receiver, which in turn receives input from the pilot's handheld transmitter. It works by sending surprisingly infrequent pulses to the microcontroller, requiring interrupt service routines to monitor the transmitter's activity without having to slow down the processor.
+				</p>
+
+				<!-- <br> -->
+				<h3>Sensor Fusion</h3>
+				<p class="fontsize">
+					To calculate the tilt of the quadcopter along each axis (pitch/roll/yaw), it fuses the data from all three triple-axis sensors.
+					<br><br>
+					Why use them all? Integrating the values from the gyroscope alone with respect to time passed from an initial condition (rotational VELOCITY to tilt ANGLE) produces drift in the long run due to the inherent slow sampling rate of the sensor. Using the accelerometer alone to find the force of gravity (an absolute, downward direction), to find the current, absolute tilt angles is inefficient unless the quad is at constant velocity 100% of the time. The triple-axis magnetometer is for getting an absolute heading (determined by the earth's poles); however even this 3-dimensional data would be skewed without considering tilt, since heading is one dimensional. 
+					<br><br>
+					To overcome this problem, the quadcopter implements a low pass filter for the gyroscope and a high pass filter for the accelerometer. Once these two values are then fused into a single tilt value (for each axis), the magnetometer readings can then be corrected to produce the true 2-dimensional heading. 
+				</p>
+				
+				<!-- <br> -->
+				<h3>PID Looping</h3>
+				<br>
+				<center><img alt="Quadcopter" src="../img/quad/PIDCross.JPG" width="75%"></center>
+				<center><i>PID Tuning the quadcopter</i></center>
+				<p class="fontsize"></p>
+				<p class="fontsize">
+					Once the tilt values are calculated, the quadcopter compares them to the desired tilt values, which is set by the transmitter. The amount of error between these two values are constantly fed into the correct PID loop to dispense the appropriate amount of power to be sent to each motor. There are three PID loops for each tilt axis (roll/pitch/yaw) and another PID loop for altitude hold.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

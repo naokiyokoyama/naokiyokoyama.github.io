@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Naoki Yokoyama</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Favicon-->
+		<link rel="icon" type="../image/png" href="../img/favicon.png">
+		<!--CSS Links-->
+    <link rel="stylesheet" href="../css/navbar.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<!--Scripts-->
+    <script type="text/javascript" src="../js/analytics.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+		<script type="text/javascript" src="../js/portfolio.js"></script>
+
+		<style>
+		.giffy {
+	    display: none;
+	  }
+			@media screen and (max-device-width: 800px) {
+		    .webby {
+		      display: none;
+	    	}
+	    	.giffy {
+		      display: inline;
+	    	}
+	    }
+		</style>
+	</head>
+	<body>
+		
+		<!--Navbar begins-->
+     <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="../index.html"><li>Home</li></a>
+          <a href="index.html"><li>Portfolio</li></a>
+          <a href="../about_me.html"><li>About Me</li></a>
+          <a href="website.html"><li>This Site</li></a>
+          <a href="../img/resume.pdf"><li>Resume</li></a>
+          <a href="../cs.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="navbar navbar-inverse navbar-static-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="index.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../about_me.html">The Author</a></li>
+                <li><a href="portfolio/website.html">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../cs.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<center>
+									<h2>3D Printed Automatic Plant Waterer</h2>
+								</center>
+							</div>
+			
+							<center>
+								<img src="http://i.imgur.com/u6YQq6y.gif" class="giffy" width="80%">
+								<video preload="auto" autoplay="autoplay" loop="loop" style="width: 80%" class="webby">
+								  <source src="http://i.imgur.com/u6YQq6y.webm" type="video/webm"></source>
+								  <source src="http://i.imgur.com/u6YQq6y.mp4" type="video/mp4"></source>
+								</video>
+							</center>
+							
+							<h3>Autonomously keeps plants moist!</h3>
+							<p class="fontsize">
+								Before I knew it, my venus flytraps had multiplied and I had to divide them into more pots. Watering them was tedious, especially since they need to be kept pretty moist. So I designed this robot in SolidWorks and printed it out, and bought a few parts for the electronics.
+								<br><br>
+								The robot is plugged into a timer I had, and waters the plants on a daily basis.
+							</p>
+							<h3>Homemade Optical Encoder</h3>
+								<center>
+								  <img src="http://i.imgur.com/uXUSbEb.gif" alt="" class="giffy" width="60%">
+								  <video preload="auto" autoplay="autoplay" loop="loop" style="width: 80%" class="webby">
+									  <source src="http://i.imgur.com/uXUSbEb.webm" type="video/webm"></source>
+								 	  <source src="http://i.imgur.com/uXUSbEb.mp4" type="video/mp4"></source>
+									</video>
+									<br><i>Ensures the robot moves exact distances by counting the number of blinks;<br>it stops after a certain, predetermined amount of blinks, are counted.</i><br><br>
+							  </center>
+							  <p class="fontsize">
+									To make the robot's movement precise, I used an LED and a photoresistor, along with a slotted disc I 3D printed, in order to track exactly how long the robot extends and retracts the nozzle. As the disk rotates, the light from the LED is continuously covered and uncovered by the slots on the disk. On the other side of the disk is a photoresistor, which can count the amount of times the light is covered and then uncovered, or 'blinks.' The motor stops after a certain amount of blinks are counted, thus accurately stopping the nozzle at the same displacement every time.
+								</p>
+							<h3>Potentiometer for More Position Control</h3>
+							<br>
+							<center>
+								<img src="../img/waterbunny/potentiometer.jpg" alt="" class="featuredimg" width="45%">
+								<img src="../img/waterbunny/pot.jpg" alt="" class="featuredimg" width="20%">
+							</center>
+							<br>
+							<p class="fontsize">
+								A simple potentiometer is coupled to the large gear the robot is mounted upon. In fact, the potentiometer is the actual shaft! Since the potentiometer knob glides so smoothly anyway, I thought why not use it as a robot joint?
+							</p>
+							<h3>Electronics</h3>
+								<center>
+									<img src="../img/waterbunny/electronics.jpg" alt="" class="featuredimg" width="45%">
+									<img src="../img/waterbunny/full.jpg" alt="" class="featuredimg" width="45%">
+								</center>
+								<p class="fontsize">
+									Parts list:
+									<div style="margin-left: 10%">
+										<li class="fontsize">Arduino Uno</li>
+										<li class="fontsize">5V USB Charger (powers the Arduino from the wall)</li>
+										<li class="fontsize">Water pump</li>
+										<li class="fontsize">SPST Relay (turns water pump on/off)</li>
+										<li class="fontsize">L298 H-bridge motor driver</li>
+										<li class="fontsize">VEX Motor 393</li>
+										<li class="fontsize">White LED (encoder)</li>
+										<li class="fontsize">Photoresistor (encoder)</li>
+										<li class="fontsize">Limit switch (resetting position)</li>
+									</div>
+								</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+			
+		<script src="../js/bootstrap.js"></script>
+	</body>
+</html>

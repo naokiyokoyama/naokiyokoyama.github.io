@@ -1,0 +1,68 @@
+.navbar {
+	font-weight:200;
+	font-family: 'Raleway', sans-serif;
+  background: #292a30;
+  text-decoration: none;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(http://fonts.gstatic.com/s/raleway/v9/8KhZd3VQBtXTAznvKjw-kwzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/QAUlVt1jXOgQavlW5wEfxQLUuEpTyoUstqEm5AMlJo4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+video#bgvid {
+	padding-top: 0px;
+	position: fixed; 
+	left: 0; top: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; 
+	z-index: -100;
+	background: url(../img/quad_freeze.jpg) no-repeat;
+	background-size: cover;
+	margin-left: auto;
+  margin-right: auto;
+}
+
+#greeting {
+    /*visibility: hidden;*/
+}
+
+@media screen and (max-device-width: 800px) {
+	#bgvid { display: none; }
+	#greet {
+		font-size: 90%;
+		margin-top:25%; 
+		margin-left:50%;
+	}
+}
+
+.page-header {
+	margin-top: 0px;
+}
+
+.panel-body {
+	padding-top: 0px;
+}
+
+.featuredImg {
+	margin-bottom: 15px;
+}
+
+#Container .mix{
+	display: none;
+}
+.fontsize {
+	font-size: 125%;
+}

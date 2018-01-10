@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:200,300,600,400,900,700);
+.navbar2 {
+  position:fixed;
+  background-color: #292A30;
+  /*background-image:url('http://puu.sh/g3bIl/e42d606ceb.png');*/
+  background-repeat:no-repeat;
+  background-size:contain;
+  height:50px;
+  top:0;left:0;right:0;
+  border-bottom: #5f5f5f 2px solid;
+  z-index: 100;
+  display: block;
+}
+
+.navbar {
+  margin-top: -70px; 
+}
+
+body {
+  padding-top: 70px;
+}
+
+.navbar2::after { 
+  margin-top: 50px;
+}
+.navbar2 ul{
+  margin-top:0px;
+}
+.navbar2 ul li{
+  display:inline-block;
+  color:#777777;
+  padding:13px;
+  font-family:'Titillium Web', sans-serif;
+  font-size: 20px;
+  transition:200ms all linear;
+}
+.navbar2 a{
+  text-decoration:none;
+}
+.navbar2 a#spcl:after{content:'';}
+.navbar2 ul li:hover{
+  background:#777777;
+  padding:6px;
+  margin:7px 14px;
+  transform:rotate(-4deg);
+  color:#eee;
+  font-weight:600;
+  border-radius:2px;
+}
+.navbar2 a#spcl li{
+  color:rgb(69, 137, 166);
+}
+.navbar2 a#spcl li:hover{
+  background:rgb(69, 137, 166);
+  color:#eee;
+}
+.denjin-top{
+  background:url('http://puu.sh/fTifb/c97b822afc.png') center center no-repeat;
+  width:100%;
+  margin:0px -800px 0px -800px;
+  padding:0px 800px 0px 800px;
+  height:280px;
+  border-bottom:#B12A2A 3px solid;
+}
+.denjin-content{
+  width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+  position:relative;
+  top:70px;
+  font-size:170%;
+  color:#B12A2A;
+  font-family:'Titillium Web', sans-serif;
+}
+.denjin-content *{
+  font-weight:500;
+  margin:10px;
+}
+.denjin-content h5{
+  font-size:75%;
+}
+.denjin-content div{
+  font-size:70%;
+}
+.denjin-content span{
+  color:#eee;
+  background:#B12A2A;
+  padding:0px 2px 0px 4px;
+  border-radius:2px;
+  font-weight:600;
+}
