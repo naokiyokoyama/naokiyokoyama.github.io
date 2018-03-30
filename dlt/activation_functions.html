@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Naoki Yokoyama</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Favicon-->
+		<link rel="icon" type="../image/png" href="../img/favicon.png">
+		<!--CSS Links-->
+    <link rel="stylesheet" href="../css/navbar.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<!--Scripts-->
+    <script type="text/javascript" src="../js/analytics.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+		<script type="text/javascript" src="../js/portfolio.js"></script>
+
+		<style>
+		.giffy {
+	    display: none;
+	  }
+			@media screen and (max-device-width: 800px) {
+		    .webby {
+		      display: none;
+	    	}
+	    	.giffy {
+		      display: inline;
+	    	}
+	    }
+		</style>
+	</head>
+	<body>
+		
+		<!--Navbar begins-->
+     <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="../index.html"><li>Home</li></a>
+          <a href="../dlt/index.html"><li>Tutorials</li></a>
+          <a href="../portfolio/index.html"><li>Portfolio</li></a>
+          <a href="../about_me.html"><li>About Me</li></a>
+          <a href="website.html"><li>This Site</li></a>
+          <a href="../img/resume.pdf"><li>Resume</li></a>
+          <a href="../cs.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="navbar navbar-inverse navbar-static-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../dlt/index.html">Tutorials</a></li>
+            <li><a href="../portfolio/index.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../about_me.html">The Author</a></li>
+                <li><a href="portfolio/website.html">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../cs.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<center>
+									<h2>Activation Functions</h2>
+								</center>
+							</div>
+							<h3>Why Do We Need Activation Functions?</h3>
+								<center>
+									<img src="../img/dlt/af/linear.png" width="80%">
+								</center>
+							<p class="fontsize">
+								<li class="fontsize">In general, a standard neuron learns a weight and a bias, which are used to transform its input into its output.</li>
+								<li class="fontsize">But a neural net made up entirely of these neurons is essentially a single linear function, there is no point.</li>
+								<li class="fontsize">An activation function is responsible for deciding to “activate” certain nodes; turning them on or off.</li>
+								<li class="fontsize">With an adequate net architecture, this introduction of nonlinearity will allow our net to go from a simple linear function to a universal function approximator!</li>
+							</p>
+
+							<h3>What Does an Activation Function Look Like?</h3>
+							<p class="fontsize">
+								<li class="fontsize">Simplest activation: 0 or 1 if the output passes a certain, learned threshold.</li>
+								<li class="fontsize">Problem: makes it difficult to learn weights.</li>
+								<li class="fontsize">Why? Backpropagation relies heavily on gradients to learn weights, which are non-existent for this activation function.</li>
+							</p>
+
+							<h3>So we need activation functions that provide <i>useful</i> gradients...</h3>
+							<center>
+								<img src="../img/dlt/af/sigtanh.jpg" width="80%">
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">Sigmoids are popular because they are both nonlinear and differentiable. They squash the input into a value between 0 and 1, similar to a boolean function.</li>
+								<li class="fontsize">However, the output is always positive, which may not be desirable.</li>
+								<li class="fontsize">Tanh activation is similar to sigmoid, but is centered about 0 (range is [-1, 1]), solving the problem of positive-only outputs.</li>
+								<li class="fontsize">Similar to convolutional layers, a sliding window is used, usually 2x2.</li>
+								<li class="fontsize">But both activations have the vanishing gradient problem; towards the extremities of their outputs, they become flat, making the gradient vanish and preventing weights from being updated.</li>
+							</p>
+
+							<h3>The ReLU</h3>
+							<center>
+								<img src="../img/dlt/af/relu.jpg" width="80%">
+								<p class="fontsize"><i>ReLU and Leaky ReLU</i></p>
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">The Rectified Linear Unit (ReLU) is both nonlinear and differentiable.</li>
+								<li class="fontsize">The ReLU function is just max{0,x}; it will pass the input if it is positive, and 0 if not.</li>
+								<li class="fontsize">This ensures that the gradient exists for values larger than 0 (see image).</li>
+								<li class="fontsize">However, if the input is lower than 0, it may again result in a dead neuron that no longer learns.</li>
+								<li class="fontsize">Leaky ReLU fixes this by adding a small gradient below 0, giving the neuron a chance to revive over time if the backpropagation wills it do so.</li>
+							</p>
+
+							<h3>Softmax</h3>
+							<p class="fontsize">
+								<li class="fontsize">Returns a vector that sums to 1.</li>
+								<li class="fontsize">Useful for outputting probabilities for multiple classes, i.e classifying an image as a type of animal.</li>
+								<li class="fontsize">However, some frameworks choose to stick to independent  logistic classifiers (sigmoids) to dispense probabilities for each class, such as YOLOv3.</li>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+			
+		<script src="../js/bootstrap.js"></script>
+	</body>
+</html>

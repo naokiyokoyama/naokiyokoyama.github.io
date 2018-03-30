@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Naoki Yokoyama</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Favicon-->
+		<link rel="icon" type="../image/png" href="../img/favicon.png">
+		<!--CSS Links-->
+    <link rel="stylesheet" href="../css/navbar.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<!--Scripts-->
+    <script type="text/javascript" src="../js/analytics.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+		<script type="text/javascript" src="../js/portfolio.js"></script>
+
+		<style>
+		.giffy {
+	    display: none;
+	  }
+			@media screen and (max-device-width: 800px) {
+		    .webby {
+		      display: none;
+	    	}
+	    	.giffy {
+		      display: inline;
+	    	}
+	    }
+		</style>
+	</head>
+	<body>
+		
+		<!--Navbar begins-->
+     <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="../index.html"><li>Home</li></a>
+          <a href="../dlt/index.html"><li>Tutorials</li></a>
+          <a href="../portfolio/index.html"><li>Portfolio</li></a>
+          <a href="../about_me.html"><li>About Me</li></a>
+          <a href="website.html"><li>This Site</li></a>
+          <a href="../img/resume.pdf"><li>Resume</li></a>
+          <a href="../cs.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="navbar navbar-inverse navbar-static-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../dlt/index.html">Tutorials</a></li>
+            <li><a href="../portfolio/index.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../about_me.html">The Author</a></li>
+                <li><a href="portfolio/website.html">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../cs.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<center>
+									<h2>Convolutional Neural Networks (Code Coming Soon!)</h2>
+								</center>
+							</div>
+							<h3>The Problem with Fully-Connected Networks</h3>
+							<center>
+								<img src="../img/dlt/cnn/fcn.jpg" width="80%">
+								<p class="fontsize"><i>A fully connected neural net</i></p>
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">Fully-connected layers learn global patterns in a training sample; ordering matters!</li>
+								<li class="fontsize">Fully-connected models have to learn the pattern as if it was new/different if it appears elsewhere in the input, i.e if the input is shifted slightly.</li>
+								<li class="fontsize">Not suited for learning local features placed arbitrarily in an image!</li>
+								<li class="fontsize">We need a model that is not sensitive to the locations at which features appear in the image.</li>
+							</p>
+
+							<h3>How Convolutional Neural Nets Work</h3>
+							<center>
+								<img src="../img/dlt_icons/cnn.gif" width="80%">
+								<p class="fontsize"><i>A convolutional layer with a stride of 2, output depth of 2. Usually these layers will have a stride of 1 though.</i></p>
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">Uses a constrained window (usually 3x3 or 5x5 pixels) that processes each input pixel independently.</li>
+								<li class="fontsize">Thus, each result does not depend on where the window is in the image, just the patch of pixels it captures.</li>
+								<li class="fontsize">Each patch then produces a tensor product with a learned kernel.</li>
+								<li class="fontsize">This product is flattened into one dimension, and is placed in the corresponding spatial location of the output. </li>
+								<li class="fontsize">Output of a convolutional layer is usually activated using ReLU.</li>
+							</p>
+
+							<h3>Max Pooling</h3>
+							<center>
+								<img src="../img/dlt/cnn/maxpool.png" width="80%">
+								<p class="fontsize"><i>The input grid represents the green grids from the previous image.</i></p>
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">Outputs of convolutional layers are downsampled, disposing unhelpful information and allowing important features to persist.</li>
+								<li class="fontsize">Shrinking outputs also allows the model to learn features not necessarily captured by the small 3x3 kernels of convolutional layers.</li>
+								<li class="fontsize">Max pooling layers are used to shrink the outputs.</li>
+								<li class="fontsize">Similar to convolutional layers, a sliding window is used, usually 2x2.</li>
+								<li class="fontsize">However, instead of using learned weights, the output of a max pool window will always be the max value captured.</li>
+								<li class="fontsize">Max pooling is preferred to average pooling to prevent prominent features from being degraded.</li>
+							</p>
+
+							<h3>Beyond Convolutional Neural Networks</h3>
+							<center>
+								<img src="../img/dlt/cnn/cap.png" width="80%">
+								<p class="fontsize"><i>These images may look the same to a CNN.</i></p>
+							</center>
+							<p class="fontsize">
+								<li class="fontsize">CNNs are a little TOO translation invariant (see image above).</li>
+								<li class="fontsize">Recently, Hinton created the concept of Capsule Networks, which take spatial hierachies into consideration when looking for patterns.</li>
+								<li class="fontsize">CNNs are still sensitive against variations such as rotation and scale.</li>
+								<li class="fontsize">To combat this, there are data augmentation techniques that expand training sets by creating additional variants of training samples, tweaking rotation, scale, blur, noise, color, etc.</li>
+								<li class="fontsize">From Hinton's Reddit AMA in r/MachineLearning: <b>"The pooling operation used in convolutional neural networks is a big mistake and the fact that it works so well is a disaster."</b></li>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+			
+		<script src="../js/bootstrap.js"></script>
+	</body>
+</html>

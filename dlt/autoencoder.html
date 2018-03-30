@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Naoki Yokoyama</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Favicon-->
+		<link rel="icon" type="../image/png" href="../img/favicon.png">
+		<!--CSS Links-->
+    <link rel="stylesheet" href="../css/navbar.css">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<!--Scripts-->
+    <script type="text/javascript" src="../js/analytics.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+		<script type="text/javascript" src="../js/portfolio.js"></script>
+
+		<style>
+		.giffy {
+	    display: none;
+	  }
+			@media screen and (max-device-width: 800px) {
+		    .webby {
+		      display: none;
+	    	}
+	    	.giffy {
+		      display: inline;
+	    	}
+	    }
+		</style>
+	</head>
+	<body>
+		
+		<!--Navbar begins-->
+     <div class="navbar2 hidden-xs">
+      <div align="center">
+        <ul>
+          <a href="../index.html"><li>Home</li></a>
+          <a href="../dlt/index.html"><li>Tutorials</li></a>
+          <a href="../portfolio/index.html"><li>Portfolio</li></a>
+          <a href="../about_me.html"><li>About Me</li></a>
+          <a href="website.html"><li>This Site</li></a>
+          <a href="../img/resume.pdf"><li>Resume</li></a>
+          <a href="../cs.html" id="spcl"><li>Contact</li></a>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="navbar navbar-inverse navbar-static-top visible-xs">
+      <div class="container">
+        <div class="navbar-header">
+        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button></div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../dlt/index.html">Tutorials</a></li>
+            <li><a href="../portfolio/index.html">Portfolio</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="../about_me.html">The Author</a></li>
+                <li><a href="portfolio/website.html">This Website</a></li>
+              </ul>
+            </li>
+            <li><a href="../cs.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Navbar ends-->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-1"></div>
+				<div class="col-lg-10">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="page-header">
+								<center>
+									<h2>Autoencoders (Code Coming Soon!)</h2>
+								</center>
+							</div>
+							<h3>An Unsupervised Generative Model</h3>
+								<center>
+									<img src="../img/dlt_icons/ae.png" width="80%">
+								</center>
+							<p class="fontsize">
+								<li class="fontsize">One of the most simple neural nets that serves as a generator, as opposed to a discriminator.</li>
+								<li class="fontsize">Encodes its input to a smaller dimension, then decodes that compressed representation to <b style="color: red">try to reconstruct the input.</b></li>
+								<li class="fontsize">Since the goal is to simply reconstruct the input, the training can be unsupervised, as the net already has the input to compare against the output.</li>
+							</p>
+
+							<h3>Why reconstruct the input?</h3>
+							<p class="fontsize">
+								<li class="fontsize">After training, the net will presumably have learned how to extract the important features of the input, and use them to recreate a convincing reconstruction.</li>
+								<li class="fontsize">Thus, if we pass a noisy input, the autoencoder should be able to accurately recreate the original input.</li>
+								<li class="fontsize">To make the autencoder more robust against certain types of noise, the noise could be added to the training samples before being passed through the net, but the output would still be compared against the original, noise-free input.</li>
+							</p>
+
+							<h3>Noise Removal and Beyond</h3>
+							<center>
+								<img src="../img/dlt/ae/facecompletion.png" width="80%">
+								<p class="fontsize"><i>Face completion using an AE (within a GAN) ["Generative Adversarial Denoising Autoencoder for Face Completion"]</i></p>
+								<img src="../img/dlt/ae/neural_inpainting.jpg" width="80%">
+								<p class="fontsize"><i>Semantic inpainting on masked images ["Context Encoders: Feature Learning by Inpainting"]</i></p>
+								<img src="../img/dlt/ae/cage.gif" width="80%">
+								<p class="fontsize"><i>Two autoencoders used for swapping faces between two people (actress' face replaced by Nicholas Cage's) (aka DeepFakes)</i></p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+			
+		<script src="../js/bootstrap.js"></script>
+	</body>
+</html>
