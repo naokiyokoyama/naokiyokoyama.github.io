@@ -138,12 +138,87 @@
 								<li class="fontsize">To combat this, there are data augmentation techniques that expand training sets by creating additional variants of training samples, tweaking rotation, scale, blur, noise, color, etc.</li>
 								<li class="fontsize">From Hinton's Reddit AMA in r/MachineLearning: <b>"The pooling operation used in convolutional neural networks is a big mistake and the fact that it works so well is a disaster."</b></li>
 							</p>
+							<h3>Fully Connected Example</h3>
+							<pre class="prettyprint"># Prepare training/test set
+from keras.datasets import mnist
+(train_im,train_labels),(test_im,test_labels) = mnist.load_data()
+train_im = train_im.reshape((60000,28*28))
+train_im = train_im.astype('float32')/255
+test_im  = test_im.reshape((10000,28*28))
+test_im  = test_im.astype('float32')/255
+from keras.utils import to_categorical
+train_labels = to_categorical(train_labels)
+test_labels  = to_categorical(test_labels)
+
+# Create neural net
+from keras import models, layers
+net = models.Sequential()
+# Input, fully connected layer
+net.add(layers.Dense(512,activation="relu",input_shape=(28*28,)))
+# Output, classification layer
+net.add(layers.Dense(10,activation="softmax"))
+# Add loss/optimizer
+net.compile(optimizer='rmsprop',
+			loss='categorical_crossentropy',
+			metrics=['accuracy'])
+# Train
+net.fit(train_im,train_labels,epochs=5,batch_size=128)
+loss,acc = net.evaluate(test_im, test_labels)
+print acc
+</pre>
+						<p class="fontsize">
+							Accuracy on test set: 97.8%
+							<br>
+							As you can see, a 2D image must be flattened into a 1D vector for use with fully connected layers.
+						</p>
+							<h3>Convolutional Example</h3>
+							<pre class="prettyprint"># Prepare training/test set
+from keras.datasets import mnist
+(train_im,train_labels),(test_im,test_labels) = mnist.load_data()
+train_im = train_im.reshape((60000,28,28,1))
+train_im = train_im.astype('float32')/255
+test_im  = test_im.reshape((10000,28,28,1))
+test_im  = test_im.astype('float32')/255
+from keras.utils import to_categorical
+train_labels = to_categorical(train_labels)
+test_labels  = to_categorical(test_labels)
+
+# Create neural net
+from keras import models, layers
+net = models.Sequential()
+# Input, convolutional layer
+net.add(layers.Conv2D(32,(3,3),activation="relu",input_shape=(28,28,1)))
+net.add(layers.MaxPooling2D((2,2)))
+# Hidden convolutional layer #1
+net.add(layers.Conv2D(64,(3,3),activation="relu"))
+net.add(layers.MaxPooling2D((2,2)))
+# Hidden convolutional layer #2
+net.add(layers.Conv2D(64,(3,3),activation="relu"))
+# Flatten for classification
+net.add(layers.Flatten())
+# Classification layer
+net.add(layers.Dense(64,activation='relu'))
+net.add(layers.Dense(10,activation='softmax'))
+# Add loss/optimizer
+net.compile(optimizer='rmsprop',
+			loss='categorical_crossentropy',
+			metrics=['accuracy'])
+# Train
+net.fit(train_im,train_labels,epochs=5,batch_size=128)
+loss,acc = net.evaluate(test_im, test_labels)
+print acc
+</pre>
+						<p class="fontsize">
+							Accuracy on test set: 99%
+							<br>
+							With CNNs, 2D images are processed as they are, without being flattened into a 1D signal. May not seem like much of a bump, but this is a classification task, in which the objects (MNIST digits) are all generally the same size and are centered. Convolutional layers will shine brighter at detection tasks, where their robustness against arbitrary placement of features will be more useful.
+						</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>	
-			
+		<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>	
 		<script src="../js/bootstrap.js"></script>
 	</body>
 </html>
