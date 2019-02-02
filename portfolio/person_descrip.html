@@ -1,105 +1,99 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>Naoki Yokoyama</title>
+    <head>
+      <title>Naoki Yokoyama</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Favicon-->
+      <link rel="icon" type="../image/png" href="../img/favicon.png">
+      <!--CSS Links-->
+      <link rel="stylesheet" href="../css/navbar.css">
+      <link rel="stylesheet" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" href="../css/styles.css">
+      <!--Scripts-->
+      <script type="text/javascript" src="../js/analytics.js"></script>
+      <script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
+      <script type="text/javascript" src="../js/portfolio.js"></script>
+    </head>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Favicon-->
-		<link rel="icon" type="../image/png" href="../img/favicon.png">
-		<!--CSS Links-->
-    <link rel="stylesheet" href="../css/navbar.css">
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/styles.css">
-		<!--Scripts-->
-    <script type="text/javascript" src="../js/analytics.js"></script>
-		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
-		<script type="text/javascript" src="../js/portfolio.js"></script>
-		
-		<style>
-		.giffy {
-	    display: none;
-	  }
-			@media screen and (max-device-width: 800px) {
-		    .webby {
-		      display: none;
-	    	}
-	    	.giffy {
-		      display: inline;
-	    	}
-	    }
-		</style>
-	</head>
-	<body>
-		
-		<!--Navbar begins-->
-     <div class="navbar2 hidden-xs">
-      <div align="center">
-        <ul>
-          <a href="../index.html"><li>Home</li></a>
-          <a href="../dlt/index.html"><li>Tutorials</li></a>
-          <a href="../portfolio/index.html"><li>Portfolio</li></a>
-          <a href="../about_me.html"><li>About Me</li></a>
-          <a href="website.html"><li>This Site</li></a>
-          <a href="../img/cv.pdf"><li>CV</li></a>
-          <a href="../cs.html" id="spcl"><li>Contact</li></a>
-        </ul>
-      </div>
-    </div>
-
-    
-    <div class="navbar navbar-inverse navbar-static-top visible-xs">
-      <div class="container">
-        <div class="navbar-header">
-        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button></div>
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../dlt/index.html">Tutorials</a></li>
-            <li><a href="../portfolio/index.html">Portfolio</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="../about_me.html">The Author</a></li>
-                <li><a href="portfolio/website.html">This Website</a></li>
-              </ul>
-            </li>
-            <li><a href="../cs.html">Contact</a></li>
+    <body>
+        
+      <!--Navbar begins-->
+      <div class="navbar2 hidden-xs">
+        <div align="center">
+          <ul>
+            <a href="../index.html"><li>Home</li></a>
+            <a href="../dlt/index.html"><li>Tutorials</li></a>
+            <a href="../portfolio/index.html"><li>Portfolio</li></a>
+            <a href="../about_me.html"><li>About Me</li></a>
+            <a href="website.html"><li>This Site</li></a>
+            <a href="../img/cv.pdf"><li>CV</li></a>
+            <a href="../cs.html" id="spcl"><li>Contact</li></a>
           </ul>
         </div>
       </div>
-    </div>
-    <!--Navbar ends-->
+      
+      <div class="navbar navbar-inverse navbar-static-top visible-xs">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand">Naoki Yokoyama</a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../dlt/index.html">Tutorials</a></li>
+              <li><a href="../portfolio/index.html">Portfolio</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="../about_me.html">The Author</a></li>
+                  <li><a href="portfolio/website.html">This Website</a></li>
+                </ul>
+              </li>
+              <li><a href="../cs.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--Navbar ends-->
 
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-1"></div>
-				<div class="col-lg-10">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="page-header">
-								<center>
-									<h2>Person Description Using Deep Learning</h2>
-								</center>
-							</div>
-							<center>
-								<img src="../img/robocup/robocup_ppl.jpg" alt="" width="80%">
-								<br>
-								<i class="fontsize">Predictions are made using OpenPose to detect humans and their body parts, which are then subjected to various deep convolutional classifiers.</i>
-								<br>
-							</center>
-							<h3>More to come.</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-			
-		<script src="../js/bootstrap.js"></script>
-	</body>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                  <div class="page-header">
+                    <center>
+                      <h2>Person Description Using Deep Learning</h2>
+                    </center>
+                  </div>
+                  <center>
+                    <img src="../img/robocup/robocup_ppl.jpg" alt="" width="80%">
+                    <br>
+                    <i class="fontsize">Predictions are made using OpenPose to detect humans and their body parts, which are then subjected to various deep convolutional classifiers.</i>
+                    <br>
+                  </center>
+                  <h3>OpenPose for Person Detection and Segmentation</h3>
+                  <p class="fontsize">
+                    OpenPose was used to find the keypoints (i.e. right elbow, left knee) of each person in the camera frame. Each person could then be segmented by their head, torso, and legs. Using three convolutional classifiers, their gender, age, and emotion could be inferred from their face. Using the DeepFashion dataset by the University of Hong Kong, I trained an InceptionV3 model to recognize the clothes in a picture. By feeding this model images of each person's torso and legs, their upper and lower clothes could be inferred. Finally, by using a color histogram conditioned on pixels near particular keypoints, the color of each clothing could also be inferred.  
+                  </p>
+                  <h3>DeepFashion Classifier</h3>
+                  <p class="fontsize">
+                    I trained an InceptionV3 as well as a YOLOv2 model on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html">DeepFashion dataset</a>. 
+                  </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+            
+      <script src="../js/bootstrap.js"></script>
+    </body>
 </html>
