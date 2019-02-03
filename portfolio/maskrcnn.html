@@ -70,24 +70,30 @@
               <div class="panel-body">
                   <div class="page-header">
                     <center>
-                      <h2>Person Description Using Deep Learning</h2>
+                      <h2>Rapidly Creating an Effective, Labelled, and Diverse Training Set for Object Segmentation using Deep Learning</h2>
                     </center>
                   </div>
                   <center>
-                    <img src="../img/robocup/robocup_ppl.jpg" alt="" width="80%">
+                    <img src="../img/maskrcnn/wrs_maskrcnn.png" alt="" width="80%">
                     <br>
-                    <i class="fontsize">Predictions are made using OpenPose to detect humans and their body parts, which are then subjected to various deep convolutional classifiers.</i>
+                    <i class="fontsize">After training, our model was robust in detecting objects regardless of size, proximity to the camera, orientation, occlusions, lighting, and noise.</i>
                     <br>
                   </center>
-                  <h3>OpenPose for Person Detection and Segmentation</h3>
+                  <h3>Rapid Artificial Training Data Generation</h3>
                   <p class="fontsize">
-                    OpenPose was used to find the keypoints (i.e. right elbow, left knee) of each person in the camera frame. Each person could then be segmented by their head, torso, and legs. Using three convolutional classifiers, their gender, age, and emotion could be inferred from their face. Using the DeepFashion dataset by the University of Hong Kong, I trained an InceptionV3 model to recognize the clothes in a picture. By feeding this model images of each person's torso and legs, their upper and lower clothes could be inferred. Finally, by using a color histogram conditioned on pixels near particular keypoints, the color of each clothing could also be inferred.  
+                    To detect and manipulate objects with our robot at RIVeR, we used the Mask R-CNN framework for object detection and segmentation. In order to gather a sufficiently large amount of training data in an efficient and rapid manner, our approach involved generating an exhaustive artificial training set afflicted with various types of noise, inspired by <b>OpenAI's paper on domain randomization</b> (<a href="https://arxiv.org/abs/1703.06907">https://arxiv.org/abs/1703.06907</a>). By adding noise that may appear in the images taken by the camera, we train our object detection model to be more robust against them during inference.
+                    <br><br>
+                    To generate the artificial training images, <b>videos of each object rotating atop an automatic turntable are recorded.</b> This is done at various camera elevations to capture all angles of the object from different perspectives. Background subtraction is then performed on each frame of the video in order to extract all contours of the object. These extracted contours are then randomly chosen, scaled, and rotated, before being placed on an image of scenery similar to the types of environments the robot would operate in. For each image, <b>randomly chosen contours from a few randomly chosen classes are used to teach our model how to best distinguish the objects from each other when they appear together</b>, which is especially helpful for objects that are similar in appearance. <b>Occlusions, up to a certain percentage threshold, are allowed</b> and are properly recorded when annotations are created. Each of these composite images are then afflicted with random adjustments in lighting and artificial image noise. Once a composite is generated, a corresponding annotation that records the object instance’s class and the pixel-wise contour is created in COCO format. As a result, after training, <b>our model was robust in detecting objects regardless of size, proximity to the camera, orientation, occlusions, lighting, and noise.</b>
+                    <br><br>
+                    Using the segmentation masks, we were able to precisely segment each objects point clouds in 3D space, and successfully compute grasps in cluttered environments. This approach was implemented in the World Robot Summit in Tokyo. 
                   </p>
-                  <h3>DeepFashion Classifier</h3>
-                  <p class="fontsize">
-                    I trained an InceptionV3 as well as a YOLOv2 model on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html">DeepFashion dataset</a>.
-                  </p>
-
+                  <h3>Results</h3>
+                  <center>
+                    <img src="../img/maskrcnn/all_wrs.jpg" width="80%">
+                    <br>
+                    <i class="fontsize">Examples of artificial training data, exhibiting changes in noise </i>
+                    <br>
+                  </center>
               </div>
             </div>
           </div>
