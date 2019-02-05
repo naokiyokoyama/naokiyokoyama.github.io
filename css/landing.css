@@ -60,7 +60,7 @@ mark {
   width: 100%;
   height: auto;
   top: -1.5em;
-  background: url(../img/sherman/arduino101.jpg) 50% 0 no-repeat;
+  background: url(../img/middle.jpg) 50% 0 no-repeat;
   background-size: cover;
   background-attachment: fixed;
   z-index: 2;
@@ -72,7 +72,7 @@ mark {
   /*width: 100%;*/
   height: auto;
   top: -1.5em;
-  background: url(../img/milling.jpg) 50% 0 no-repeat;
+  background: url(../img/first.jpg) 50% 0 no-repeat;
   background-size: cover;
   z-index: 2;
 }
