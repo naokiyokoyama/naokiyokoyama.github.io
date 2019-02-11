@@ -16,19 +16,6 @@
 		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
 		<script type="text/javascript" src="../js/portfolio.js"></script>
 
-		<style>
-		.giffy {
-	    display: none;
-	  }
-			@media screen and (max-device-width: 800px) {
-		    .webby {
-		      display: none;
-	    	}
-	    	.giffy {
-		      display: inline;
-	    	}
-	    }
-		</style>
 	</head>
 	<body>
 		
@@ -87,8 +74,60 @@
 									<h2>Deep Convolutional Generative Models </h2>
 								</center>
 							</div>
-							<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS8f-bDF_hmxS65k3RZ62u2XCaoayW-zZfU7YH19jmvbL_fj6RP9TJMyvep0TxMkQ64Po8iBoM6ZNQa/embed?start=true&loop=true&delayms=5000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-							<h3> More info to come! </h3>
+
+							<h3>Convolutional Autoencoders</h3>
+							<center>
+								<img src="../img/dlt/deep_conv_generative_models/autoencoder_architecture.png" width="20%">
+								<p class="fontsize"><i>Input is at the bottom, output is at the top.</i></p>
+							</center>
+							<ul>
+								<li class="fontsize">Compresses the image, then reconstructs it.</li>
+								<li class="fontsize">Two halves; encoder, decoder.</li>
+								<li class="fontsize">Tries to minimize the error between the output image and the original input image.</li>
+								<li class="fontsize">By forcing AEs to compress and reconstruct, it learns how to best:</li>
+								<ul>
+									<li class="fontsize">Encode an efficient representation of the input at the code layer.</li>
+									<li class="fontsize">Reconstruct the input using what’s left in the code layer.</li>
+								</ul>
+								<li class="fontsize">Since data must be lost through compression, low-level information is discarded and the output is blurrier than the original.</li>
+							</ul>
+							<center>
+								<img src="../img/dlt/deep_conv_generative_models/vanilla_ae.png" width="80%">
+								<p class="fontsize"><i>Results using a convolutional autoencoder trained on other images of my face. (left) Original photos, (middle) corrupted photos fed into autoencoder, (right) output from autoencoder. Outputs are blurrier than inputs, but the autoencoder has learned to fill in missing features based on neighboring context.</i></p>
+							</center>
+
+							<h3>Convolutional Autoencoders Using Residual Networks</h3>
+							<ul>
+								<li class="fontsize">Residual Network (ResNet): employs skip connections to directly channel a layer’s output farther down the network.</li>
+								<li class="fontsize">Reintroduces low-level features as the image grows back into the original size during reconstruction.</li>
+							</ul>
+							<center>
+								<img src="../img/dlt/deep_conv_generative_models/resnet_ae.png" width="80%">
+								<p class="fontsize"><i>Results using a residual autoencoder. Outputs are sharper than those of the plain convolutional autoencoder. Since the skip connections can only channel the low-level features that are present in the source layer, it cannot relay information about features lost from corruption. Therefore, reconstructed features still appear blurry</i></p>
+							</center>
+
+							<h3>Variational Convolutional Autoencoders</h3>
+							<ul>
+								<li class="fontsize">AEs don’t generate images without being fed a similar image.</li>
+								<li class="fontsize">What if we want to use just the decoder half to transform some compressed representation into an image?</li>
+								<li class="fontsize">A regular AE’s encoder learns some unique encoding function that is not easy to understand or exploit.</li>
+								<li class="fontsize">The only way to generate meaningful encodings to give the decoder would be to pass an image through the encoder.</li>
+								<li class="fontsize">Design encoder to output two values, σ and μ.</li>
+								<li class="fontsize">Sample the Gaussian distribution parametrized by them.</li>
+								<li class="fontsize">Try to get σ and μ to be as close to the unit Gaussian as possible.</li>
+								<li class="fontsize">Use KL-divergence metric in addition to reconstruction error as our loss function to minimize.</li>
+								<li class="fontsize">KL-divergence penalty encourages our encodings to follow a continuous unit Gaussian distribution.</li>
+								<li class="fontsize">Reconstruction error penalty encourages similar images to output similar encodings.</li>
+								<li class="fontsize">By balancing these two losses functions, the encoder learns how to develop encodings for different images that still fall into the same Gaussian distribution.</li>
+								<li class="fontsize">Dimensionality of σ and μ not necessarily univariate, can be large (>20).</li>
+								<li class="fontsize">Random sampling happens only during training; during testing, the mean (μ) is used as the sample.</li>
+							</ul>
+							<center>
+								<video playsinline autoplay muted loop style="width: 80%" class="webby">
+								  <source src="https://github.com/naokiyokoyama/website_media/raw/master/variational_autoencoder_demo.mp4" type="video/mp4"></source>
+								</video>
+								<p class="fontsize"><i>Sets of images generated using only two images, a target and a source. First, the encoder half of the VAE was used to generate encodings of both the source and the target, which are outputted as vectors. Then, we calculate vectors that are evenly spaced between the source and target vectors, and feed them into the decoder to obtain the intermediate images shown in the animations above.</i></p>
+							</center>
 						</div>
 					</div>
 				</div>
