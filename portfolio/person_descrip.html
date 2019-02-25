@@ -14,6 +14,21 @@
       <script type="text/javascript" src="../js/analytics.js"></script>
       <script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
       <script type="text/javascript" src="../js/portfolio.js"></script>
+      <style>
+        .video-responsive{
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+        }
+        .video-responsive iframe{
+            left:0;
+            top:0;
+            height:100%;
+            width:100%;
+            position:absolute;
+        }
+      </style>
     </head>
 
     <body>
@@ -85,9 +100,14 @@
                   </p>
                   <h3>DeepFashion Classifier</h3>
                   <p class="fontsize">
-                    I trained an InceptionV3 as well as a YOLOv2 model on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html">DeepFashion dataset</a>.
+                    I trained an InceptionV3 as well as a YOLOv2 model on the <a href="http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html">DeepFashion dataset</a>. Ultimately, the InceptionV3 classifier was used, and was fed the upper and lower halves of each person detected by OpenPose.
                   </p>
-
+                  <center>    
+                    <div class="video-responsive">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/MaeMwiMN7QU?start=104" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div> 
+                    <p class="fontsize"><i>Demonstration of Person Description using the Toyota HSR.</i></p>
+                  </center>   
               </div>
             </div>
           </div>
