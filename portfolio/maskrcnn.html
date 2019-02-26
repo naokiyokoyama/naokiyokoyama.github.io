@@ -14,6 +14,21 @@
       <script type="text/javascript" src="../js/analytics.js"></script>
       <script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
       <script type="text/javascript" src="../js/portfolio.js"></script>
+      <style>
+        .video-responsive{
+            overflow:hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+        }
+        .video-responsive iframe{
+            left:0;
+            top:0;
+            height:100%;
+            width:100%;
+            position:absolute;
+        }
+      </style>
     </head>
 
     <body>
@@ -102,6 +117,16 @@
                     <br>
                     <i class="fontsize">Groceries to sort</i>
                     <br><br>
+                    <video playsinline autoplay muted loop style="width: 80%" class="webby">
+                      <source src="https://github.com/naokiyokoyama/website_media/raw/master/mask_rcnn_robust_detections.mp4" type="video/mp4"></source>
+                    </video>
+                    <br>
+                    <i class="fontsize">Robustness to changes in orientation and occlusions. Inferences were generated on each frame after the video was recorded, they were not done in real-time. </i>
+                    <br><br>
+                    <div class="video-responsive">
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/LOxhekmqlNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div> 
+                    <p class="fontsize"><i>Demonstration of real-time detections using the Toyota HSR.</i></p>
                   </center>
               </div>
             </div>
