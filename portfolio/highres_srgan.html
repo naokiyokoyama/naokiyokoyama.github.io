@@ -105,7 +105,7 @@
                   <li class="fontsize">However, since the latent space <b>w</b> is not restricted in the same way, it is allowed <b>and even encouraged</b> to be disentangled. The paper claims that this is because it should be easier for the network to decode disentangled representations than entangled ones.</li>
                   <li class="fontsize">Therefore, StyleGAN in theory generates a less entangled latent space <b>w</b>, even when the factors of variation are not known in advance.</li>
                   <li class="fontsize">The output of the mapping network is injected <b>into the output of each of the synthesis network's convolutional layers</b>, after being processed by a learned affine transform (i.e. a single fully connected layer) <b>specific to each convolutional layer.</b></li>
-                  <li class="fontsize">As per NVIDIA's original paper on progressive GANs, they again reject the notion of that GANs suffer from covariate shift. Instead of using batch normalizaton, they use <b>adaptive instance normalization (AdaIn)</b> (Karras, Laine, & Aila, 2018), a faster and more efficient normalization technique. They use the aforementioned affine transformation to generate the scale and bias for the AdaIn operation.</li>
+                  <li class="fontsize">As per NVIDIA's original paper on progressive GANs, they again reject the notion of that GANs suffer from covariate shift. Instead of using batch normalizaton, they use <b>adaptive instance normalization (AdaIn)</b> (Huang & Belongie, 2017), a faster and more efficient normalization technique. They use the aforementioned affine transformation to generate the scale and bias for the AdaIn operation.</li>
                 </ul>
 
                 <h3>Layer-wise input of styles</h3>
@@ -144,7 +144,8 @@
 
                 <h3>References</h3>
                 <ul list-style-position='outside'>
-                  <li class="fontsize">Karras,  T.,  Laine,  S., & Aila,  T.  (2018,  Dec).  A Style-Based Generator Architecture forGenerative Adversarial Networks.arXiv e-prints, arXiv:1812.04948</li>
+                  <li class="fontsize">Karras,  T.,  Laine,  S., & Aila,  T. A Style-Based Generator Architecture forGenerative Adversarial Networks. CoRR, abs/1812.04948, 2018.</li>
+                  <li class="fontsize">X. Huang and S. J. Belongie. Arbitrary style transfer in real-time with adaptive instance normalization. CoRR, abs/1703.06868, 2017.</li>
                 </ul>
                   
               </div>
