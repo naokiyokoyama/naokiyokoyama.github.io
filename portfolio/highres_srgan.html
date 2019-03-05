@@ -85,10 +85,10 @@
                   The main aspects of NVIDIA's new StyleGAN architecture (Karras, Laine, & Aila, 2018) allowing it to generate such realistic faces are:
                 </p>
                 <ul list-style-position='outside'>
-                  <li class="fontsize">NVIDIA's new dataset, FFHQ, is comprised of 70,000 high quality 1024x1024 images of faces collected from Flickr and refined with Mechanical Turk. Their previous dataset, CelebA-HQ, which was built off of The Univ. of Hong Kong's CelebA dataset, only contained 30,000 images of celebrities, and was artificially augmented using a convolutional residual autoencoder (similar to RED-Net) and an SRGAN.</li>
-                  <li class="fontsize">An 8-layer multilayer perceptron mapping the input vector to a different latent space, from which "styles" are sampled for each convolutional layer in the synthesis network of the generator. They claim that this latent space features better disentanglement and is perceptually more linear than the input space.</li>
-                  <li class="fontsize">Layer-wise injection of input data and noise.</li>
-                  <li class="fontsize">Like they did in their previous breakthrough in generating realistic faces with GANs, the synthesis component of the generator and the discriminator were gradually grown during training to progressively output/assess images of higher resolution, which speeds up and greatly stabilizes training.</li>
+                  <li class="fontsize">NVIDIA's new dataset, <b>FFHQ, is comprised of 70,000 high quality 1024x1024 images of a diverse set of faces collected from Flickr</b> and refined with Mechanical Turk. Their previous dataset, CelebA-HQ, which was built off of The Univ. of Hong Kong's CelebA dataset, only contained <b>30,000 images of celebrities</b>, and was artificially augmented using a convolutional residual autoencoder (similar to RED-Net) and an SRGAN.</li>
+                  <li class="fontsize">An 8-layer multilayer perceptron <b>mapping the input vector to a different latent space</b>, from which "styles" are sampled for each convolutional layer in the synthesis network of the generator. They claim that this latent space features better disentanglement and is perceptually more linear than the input space.</li>
+                  <li class="fontsize"><b>Layer-wise injection of input data and noise</b>.</li>
+                  <li class="fontsize">Like they did in their previous breakthrough in generating realistic faces with GANs, the synthesis component of the generator and the discriminator were <b>gradually grown during training</b> to progressively output/assess images of higher resolution, which speeds up and greatly stabilizes training.</li>
                 </ul>
 
                 <h3>Embedding the input latent code</h3>
@@ -115,8 +115,8 @@
                 </center>
                 <ul list-style-position='outside'>
                   <li class="fontsize">Since the code from the latent space <b>w</b> is inputted into each convolutional layer of the synthesis network, scale-specific modifications to the generated images can be made. Each of these inputs are referred to as "styles" since similar network architectures have already been used for style transfer, image-to-image translation, and domain mixture. </li>
-                  <li class="fontsize">As each of the convolutional layers of the synthesis network is followed by a 2x upscaling layer, each style affects the resulting image at a different scale.</li>
-                  <li class="fontsize">The AdaIn operation also serves to normalize feature maps and overwrite preceding style inputs.</li>
+                  <li class="fontsize">As each of the convolutional layers of the synthesis network is followed by a 2x upscaling layer, <b>each style affects the resulting image at a different scale</b>.</li>
+                  <li class="fontsize">The <b>AdaIn operation also serves to normalize</b> feature maps and overwrite preceding style inputs.</li>
                   <li class="fontsize">To further localize the effects of the input styles, a portion of the input latent codes during training undergo <b>mixing regularization</b>, in which two latent <b>z</b> vectors are used to generate an image to attempt to fool the discriminator. This is done by using the two <b>z</b> vectors to generate two <b>w</b> vectors (<b>w1, w2</b>)and then generating a certain portion of the input styles using <b>w1</b> and the rest using <b>w2</b>. The crossover point where the source <b>w</b> vector for the input styles switches from <b>w1</b> to <b>w2</b> is randomly selected.</li>
                   <li class="fontsize">The localized effects of each style is illustrated in the above figure the demonstrates the results from mixture regularization.</li>
                 </ul>
@@ -127,9 +127,9 @@
                   <p class="fontsize"><i>Input noise govern acceptably stochastic aspects of the generated photos, such as specific placement of hair strands, pores, and reflections in the eyes. Images to the far right represent the standard deviation of each pixel over 100 different realizations of input noise at each layer, highlighting which aspects are affected by the noise. </i></p>
                 </center>
                 <ul list-style-position='outside'>
-                  <li class="fontsize">Many aspects of human faces can be acceptably stochastic, such as the exact placement of hair/pores/freckles.</li>
+                  <li class="fontsize"><b>Many aspects of human faces can be acceptably stochastic</b>, such as the exact placement of hair/pores/freckles.</li>
                   <li class="fontsize">Since a <b>traditional GAN only accepts input through its initial input layer</b>, it must learn to <b>generate pseudo-random numbers from earlier activations whenever needed in order to produce these features</b>. This takes up part of the network's capacity to learn, and hiding the periodicity of the generated numbers is difficult, as shown by many repetitive patterns that are exhibited by traditional GANs.</li>
-                  <li class="fontsize">By inputting <b>noise directly into each layer</b>, StyleGAN is relieved of this duty, and learns to use the noise to only adjust aspects of the image that can be slightly randomized, and does not exhibit the periodicity that a traditional GAN would.</li>
+                  <li class="fontsize">By inputting <b>noise directly into each layer</b>, StyleGAN is relieved of this duty, and learns to <b>use the noise to only adjust aspects of the image that can be slightly randomized</b>, and does not exhibit the periodicity that a traditional GAN would.</li>
                   <li class="fontsize">Since a <b>fresh set of noise is provided to each layer</b>, the effects of each input noise is also tightly localized to its own layer, meaning that adjusting noise at a finer layer only affects finer details (ex. placement of skin pores) while coarser layers affect only coarse features (ex. large-scale hair curling and larger background features).</li>
                 </ul>
 
@@ -152,6 +152,15 @@
                   <li class="fontsize">As the Noise2Noise paper puts, the problem with a simple reconstruction loss is that "a low-resolution image <i>x</i> can be explained by many different high-resolution images <i>y</i>... the network learns to putput the average of all plausible explanations (e.g., edges shifted by different amounts), which results in spatial blurriness for the network's predictions." (Letinen et. al, 2018)</li>
                 </ul>
 
+                <h3>Experimenting with improving SRGAN performance</h3>
+                <p class="fontsize">
+                  Currently, I'm trying to build an SRGAN in TensorFlow based on the architecture of StyleGAN. I believe that a lot of the benefits provided by the StyleGAN architecture are applicable to the task of super-resolution. However, I would like to avoid using the conventional reconstruction loss. My ideas to implement this include:
+                </p>
+                <ul list-style-position='outside'>
+                  <li class="fontsize">Reconstructing the mapping network to take in low-resolution images as inputs to map into the latent space <b>w</b> rather than taking in latent vectors.</li>
+                  <li class="fontsize">Instead of penalizing the network by directly comparing the output of the generator with the high-resolution ground truth, the generated image will be downscaled (using bicubic interpolation) and compared to the low-resolution input. The generated image (before bicubic interpolation) will still be evaluating using the discriminator, which will simply try to decide whether or not the image comes from the original dataset or is a product of the generator. I'm choosing to do this because while a low-resolution can be explained by many high-resolution images, when that high-resolution image is downscaled back into the size of the low-resolution input, it should match the original input.</li>
+                  <li class="fontsize">Training on the FFHQ dataset.</li>
+                </ul>
                 <h3>References</h3>
                 <ul list-style-position='outside'>
                   <li class="fontsize">Karras, T., Laine, S., and Aila, T. (2018). A Style-Based Generator Architecture for Generative Adversarial Networks. arXiv preprint arXiv:1812.04948.</li>
