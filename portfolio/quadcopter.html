@@ -1,74 +1,150 @@
 <!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
 
-<html>
-	<head>
-		<title>Naoki Yokoyama</title>
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!--Favicon-->
-		<link rel="icon" type="../image/png" href="../img/favicon.png">
-		<!--CSS Links-->
-    <link rel="stylesheet" href="../css/navbar.css">
-		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/styles.css">
-		<!--Scripts-->
+    <title>Naoki Yokoyama</title>
+
+    <!--Favicon-->
+    <link rel="icon" type="../image/png" href="img/favicon.png">
+    <!--CSS Links-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="../css/landing.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:light">
+    <!--Scripts-->
     <script type="text/javascript" src="../js/analytics.js"></script>
-		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
-		<script type="text/javascript" src="../js/portfolio.js"></script>
-	</head>
-	<body>
+    <script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+  </head>
 
-		<!--Navbar begins-->
-     <div class="navbar2 hidden-xs">
-      <div align="center">
-        <ul>
-          <a href="../index.html"><li>Home</li></a>
-          <a href="../dlt/index.html"><li>Tutorials</li></a>
-          <a href="../portfolio/index.html"><li>Portfolio</li></a>
-          <a href="../about_me.html"><li>About Me</li></a>
-          <a href="website.html"><li>This Site</li></a>
-          <a href="../img/cv.pdf"><li>CV</li></a>
-          <a href="../cs.html" id="spcl"><li>Contact</li></a>
-        </ul>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+          <a class="title" href="../index.html">Naoki Yokoyama</a>
+          <hr>
+          <a href="../index.html#bio-anchor">About Me</a> &ensp;
+          <a href="../index.html#research-anchor">Research</a> &ensp;
+          <a href="../index.html#tutorial-anchor">Tutorials</a> &ensp;
+          <a href="../index.html#side-anchor">Side Projects</a> &ensp;
+<!--           <a href="#side-anchor">Press Coverage</span> &ensp; -->
+          <a href="https://drive.google.com/file/d/1j0MELX5lTbUaxXdSLYF2bRDGz9wDlom2/view">CV</a> &ensp;
+          <br><br>
+    			<div class="panel-body">
+            <div class="page-header">
+              <center>
+                <h2>Quadcopter</h2>
+              </center>
+            </div>
+
+            <img src="../img/quad/full.jpg" alt="" class="featuredimg" width="100%">
+            
+            <h3>Why?</h3>
+            <br>
+            <p class="fontsize">
+              The quadcopter is a project I started with friends after the robot arm just before entering college. Interested in the versatility and acrobatics of the seemingly simple UAV I built one from scratch to fully understand it.
+            </p>
+
+            <!-- <br> -->
+            <h3>Microcontroller and Sensors</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/openInternals.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              The quad is powered by a Teensy 3.1 ARM microcontroller coded in Arduino and an IMU that are stored within the central piece. The Teensy communicates with the IMU via I2C. 
+            </p>
+            
+            <!-- <br> -->
+            <h3>Really Compact!</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/boards.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              On the left is the 10-degrees-of-freedom Inertial Measurement Unit. It consists of a triple-axis accelerometer, gyroscope, and magnetometer, along with a barometer for altitude control (for a total of 10 DOF). On the right is the ultra-fast ARM processor!
+            </p>
+
+            <!-- <br> -->
+            <h3>Data and Power Supply</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/pcb.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              I soldered together a small PCB to hold the MEMS sensors and microcontroller in place. An intermediate voltage regulator steps down the battery voltage so it can then be handled by the weaker regulator on the Teensy.
+            </p>
+
+            <!-- <br> -->
+            <h3>Detachable, Debuggable</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/breadboard.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              Male header pins soldered to the board's underside let it attach to a mini breadboard within the quadcopter. So not only are each of the chips removable, but the entire setup can be taken out and tested for debugging.
+            </p>
+            
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/inside.jpg" width="75%">
+            </center>
+
+            <center><i>The boards within the quad</i></center>
+
+            <!-- <br> -->
+            <h3>Electronic Speed Controller (ESC)</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/esc.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              Each motor's speed is controlled by a Q Brain quadruple ESC using PWM outputs from the microcontroller. Rotational direction cannot be changed without rewiring the motors.
+            </p>
+
+            <!-- <br> -->
+            <h3>Transmission Reading via ISRs</h3>
+            <br>
+            <center>
+              <img alt="Quad" src="../img/quad/receiver.jpg" width="75%">
+            </center>
+            <br>
+            <p class="fontsize">
+              The quadcopter receives input from a 2.4 GHz RF 6 channel receiver, which in turn receives input from the pilot's handheld transmitter. It works by sending surprisingly infrequent pulses to the microcontroller, requiring interrupt service routines to monitor the transmitter's activity without having to slow down the processor.
+            </p>
+
+            <!-- <br> -->
+            <h3>Sensor Fusion</h3>
+            <p class="fontsize">
+              To calculate the tilt of the quadcopter along each axis (pitch/roll/yaw), it fuses the data from all three triple-axis sensors.
+              <br><br>
+              Why use them all? Integrating the values from the gyroscope alone with respect to time passed from an initial condition (rotational VELOCITY to tilt ANGLE) produces drift in the long run due to the inherent slow sampling rate of the sensor. Using the accelerometer alone to find the force of gravity (an absolute, downward direction), to find the current, absolute tilt angles is inefficient unless the quad is at constant velocity 100% of the time. The triple-axis magnetometer is for getting an absolute heading (determined by the earth's poles); however even this 3-dimensional data would be skewed without considering tilt, since heading is one dimensional. 
+              <br><br>
+              To overcome this problem, the quadcopter implements a low pass filter for the gyroscope and a high pass filter for the accelerometer. Once these two values are then fused into a single tilt value (for each axis), the magnetometer readings can then be corrected to produce the true 2-dimensional heading. 
+            </p>
+            
+            <!-- <br> -->
+            <h3>PID Looping</h3>
+            <br>
+            <center><img alt="Quadcopter" src="../img/quad/PIDCross.jpg" width="75%"></center>
+            <center><i>PID Tuning the quadcopter</i></center>
+            <p class="fontsize"></p>
+            <p class="fontsize">
+              Once the tilt values are calculated, the quadcopter compares them to the desired tilt values, which is set by the transmitter. The amount of error between these two values are constantly fed into the correct PID loop to dispense the appropriate amount of power to be sent to each motor. There are three PID loops for each tilt axis (roll/pitch/yaw) and another PID loop for altitude hold.
+            </p>
+          </div>
+    		</div>
+        <div class="col-md-2"></div>
       </div>
-    </div>
-
-    
-    <div class="navbar navbar-inverse navbar-static-top visible-xs">
-      <div class="container">
-        <div class="navbar-header">
-        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button></div>
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../dlt/index.html">Tutorials</a></li>
-            <li><a href="../portfolio/index.html">Portfolio</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="../about_me.html">The Author</a></li>
-                <li><a href="portfolio/website.html">This Website</a></li>
-              </ul>
-            </li>
-            <li><a href="../cs.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--Navbar ends-->
-		
-		<div class="container">
-			<div id="targ"></div>
-			<script>
-				$( "#targ" ).load( "quadcopter_content.html" );
-			</script>
-		</div>
-
-		<script src="../js/bootstrap.js"></script>
-	</body>
+    </div>  
+    <script src="../js/bootstrap.js"></script>
+  </body>
 </html>

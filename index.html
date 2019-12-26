@@ -5,327 +5,496 @@
 
     <title>Naoki Yokoyama</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Favicon-->
     <link rel="icon" type="../image/png" href="img/favicon.png">
     <!--CSS Links-->
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/buttons.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/scrollani.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/landing.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="css/landing.css">    
     <!--Scripts-->
     <script type="text/javascript" src="js/analytics.js"></script>
-    <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
     <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Heebo:light">
   </head>
 
   <body>
-     <!--Navbar begins-->
-     <div class="navbar2 hidden-xs">
-      <div align="center">
-        <ul>
-          <a href="index.html"><li>Home</li></a>
-          <a href="dlt/index.html"><li>Tutorials</li></a>
-          <a href="portfolio/index.html"><li>Portfolio</li></a>
-          <a href="about_me.html"><li>About Me</li></a>
-          <a href="portfolio/website.html"><li>This Site</li></a>
-          <a href="img/cv.pdf"><li>CV</li></a>
-          <a href="#" id="spcl"><li>Contact</li></a>
-        </ul>
-      </div>
-    </div>
 
-    
-    <div class="navbar navbar-inverse navbar-static-top visible-xs" style="margin-top:0">
-      <div class="container">
-        <div class="navbar-header">
-        <a href="#" class="navbar-brand">Naoki Yokoyama</a>
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button></div>
-        <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dlt/index.html">Tutorials</a></li>
-            <li><a href="portfolio/index.html">Portfolio</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="about_me.html">The Author</a></li>
-                <li><a href="portfolio/website.html">This Website</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--Navbar ends-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
 
-    <div id="kakurenbou" class="greeting boxShadow">
+          <a class="title" href="index.html">Naoki Yokoyama</a>
+          <hr>
+          <a href="#bio-anchor">About Me</a> &ensp;
+          <a href="#research-anchor">Research</a> &ensp;
+          <a href="#tutorial-anchor">Tutorials</a> &ensp;
+          <a href="#side-anchor">Side Projects</a> &ensp;
+<!--           <a href="#side-anchor">Press Coverage</span> &ensp; -->
+          <a href="https://drive.google.com/file/d/1j0MELX5lTbUaxXdSLYF2bRDGz9wDlom2/view">CV</a> &ensp;
+          <br><br>
 
-      <video playsinline autoplay muted loop id="bgvid">
-        <source src="https://github.com/naokiyokoyama/website_media/raw/master/background.mp4" type="video/mp4">
-      </video>
-
-      <div class="text-center fadeMe">
-        <h2 class="articleTitle textShadow">Naoki <span class="dark">Yokoyama</span></h2>
-        <p class="articleSubTitle textShadow">Self-motivated engineer<br>passionate about AI</p>
-      </div>
-
-      <div class="scroll-pos fadeMe"> 
-          <span class="scroll-btn">
-            <div style="font-size: 20px">scroll</div>
-            <a> 
-              <span class="mouse">
-                <span></span>
-              </span>
-            </a>
-            <div style="font-size: 20px">down!</div>
-          </span>
-      </div>
-
-    </div>
-
-    <div class="slide2 boxShadow" data-type="background" data-speed="4">    
-      <div class="text-center">
-        <h3 class="articleTitle textShadow slide-top" data-plugin-options='{"offset": 100, "reverse": false}'>
-          Hi there,
-        </h3>
-        <p class="articleSubTitle slide-bottom" style="padding-top: 4vw" data-plugin-options='{"offset": -100}'>
-          <mark>I like to learn about and develop advanced technologies.</mark>
-        </p>
-      </div>
-    </div>
-    <section>
-      <div class="slide3 boxShadow" data-type="background">    
-        <h2 class="articleTitle textShadow slide-top" data-plugin-options='{"offset": 200, "reverse": false}'>
-          Here's a bit of <span class="dark">what I do:</span>
-        </h2>
-        <!-- ROW ONE *****************************************************************************-->
-        <!-- *************************************************************************************-->
-        <h3 class="articleSubTitle textShadow" style="padding-top: 2vw; padding-bottom: 2vw">I research computer vision:</h3>
-        <!-- Quadcopter, Water Bunny, Robot Arms -->
-        <div class="container">
           <div class="row">
-
-            <div class="visible-lg">
-              
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;">
-                  <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                    <p class="icon-descrip">Automated Artificial Dataset Generation for Mask R-CNN</p>
-                  </a>
+            <div class="col-md-5">
+              <center>
+                <div class="hidden-xs hidden-sm">
+                  <img src="img/me.JPG" class="featuredimg" width="100%">
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/person_descrip.html">
-                    <img src="img/portfolio_icons/robocup_icon.jpg" width="100%">
-                    <p class="icon-descrip">Describing People using Deep Learning</p>
-                  </a>
+                <div class="visible-xs visible-sm">
+                  <img src="img/me.JPG" class="featuredimg" width="70%">
+                  <br><br>
                 </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/yolov2.html">
-                      <img src="img/portfolio_icons/yolov2.PNG" width="100%">
-                    <p class="icon-descrip">Automated Artificial Dataset Generation for YOLOv2</p>
-                  </a>
-                </div>
-              </div>
-
+              </center> 
             </div>
-
-            <div class="visible-md visible-sm">
-              
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                    <p class="icon-descrip">Automated Supervised Training for YOLOv2 Transfer Learning</p>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/person_descrip.html">
-                    <img src="img/portfolio_icons/robocup_icon.jpg" width="100%">
-                    <p class="icon-descrip">Describing People using Deep Learning</p>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="visible-xs">
-              
-              <div class="col-xs-12">
-                <center>
-                  <div class="hover-container" style="background: black;">
-                    <a href="portfolio/maskrcnn.html">
-                      <img src="img/portfolio_icons/maskrcnn.jpg" width="100%">
-                      <p class="icon-descrip">Automated Supervised Training for YOLOv2 Transfer Learning</p>
-                    </a>
-                  </div>
-                </center>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-    
-        <!-- 3D Printer, Light Switch, Website -->
-        <h3 class="articleSubTitle textShadow" style="padding-top: 2vw; padding-bottom: 2vw">I like taking on personal projects:</h3>
-        <!-- ROW TWO *****************************************************************************-->
-        <!-- *************************************************************************************-->
-        <div class="container">
-          <div class="row">
-
-            <div class="visible-lg">
-              
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/waterbunny.html">
-                      <img src="img/portfolio_icons/waterbunny.jpg" width="100%">
-                    <p class="icon-descrip">Autonomous plant watering robot with closed control loops</p>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/lightswitch2.html">
-                    <img src="img/portfolio_icons/lightswitch2.jpg" width="100%">
-                    <p class="icon-descrip">Lazy light switcher w/motion detection and IR receiver</p>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/website.html">
-                    <img src="img/website.jpg" width="100%">
-                    <p class="icon-descrip">Learned<br>HTML/CSS/JS to build this site from scratch</p>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="visible-md visible-sm">
-              
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/3Dprinter.html">
-                    <img src="img/portfolio_icons/3Dprinter.jpg" width="100%">
-                    <p class="icon-descrip">Built a personal <br>3D printer <br>for only $200</p>
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="hover-container" style="background: black;" >
-                  <a href="portfolio/lightswitch.html">
-                    <img src="img/portfolio_icons/lightswitch.jpg" width="100%">
-                    <p class="icon-descrip">Turns off room light with claps or any IR remote</p>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="visible-xs">
-              
-              <div class="col-xs-12">
-                <center>
-                  <div class="hover-container" style="background: black;" >
-                    <a href="portfolio/3Dprinter.html">
-                      <img src="img/portfolio_icons/3Dprinter.jpg" width="100%">
-                      <p class="icon-descrip">Built a personal 3D printer for $200</p>
-                    </a>
-                  </div>
-                </center>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-        
-    </section>
-    <section id="mobairu" class="slide4" data-type="background" data-speed="4">    
-      <div class="text-center">
-        <h3 class="articleTitle textShadow slide-top" data-plugin-options='{"offset": 100, "reverse": false}' style="padding-bottom: 3%">
-          This is a little <span class="dark">about me:</span>
-        </h3>
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-4">
-              <img class="slide-left" src="img/about_me.jpg" width="100%">
-            </div>
-            <div class="col-xs-6">
-              <div class="highlight slide-right">
-                <div class="articleSubTitle about-text">
-                  - Scientist II at Charles River Analytics<br>
-                  - MS in Computer Vision and Machine Learning<br>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-1"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="slide5">
-      <img src="img/last.jpg" id="bgimg" align="right">
-      <div style="margin-top: 30vh">
-        <h3 class="articleTitle textShadow">
-          More <span class="dark">information:</span>
-        </h3>
-        <div class="container" style="padding-top: 10vh">
-          <div class="row">
-            <div class="buttons top-space">
-              <div class="col-sm-4">
-                <center>
-                  <a href="portfolio/index.html" class="button button-inline button-xlarge button-success hidden-xs">View Portfolio</a>
-                  <div class="button-padding">
-                    <a href="portfolio/index.html" class="button button-inline button-small button-success visible-xs">View Portfolio</a>
-                  </div>
-                </center><br>
-              </div>
-              <div class="col-sm-4">
-                <center>
-                  <a href="about_me.html" class="button button-inline button-xlarge button-warning hidden-xs">View About Me</a>
-                  <div class="button-padding">
-                    <a href="about_me.html" class="button button-inline button-small button-warning visible-xs">View About Me</a>
-                  </div>
-                </center><br>
-              </div>
-              <div class="col-sm-4">
-                <center>
-                  <a href="img/cv.pdf" class="button button-inline button-xlarge button-danger hidden-xs">View CV</a>
-                  <div class="button-padding">
-                    <a href="img/cv.pdf" class="button button-inline button-small button-danger visible-xs">View CV</a>
-                  </div>
-                </center><br>
-              </div>
+            <div class="col-md-7">
+              <p>
+                Scientist II at Charles River Analytics <br>
+                Boston, MA <br>
+                <br>
+                <i class="fa fa-graduation-cap" style="color:black;"></i><br>
+                Northeastern University <br>
+                B.S. and M.S. <br>
+                Electrical Engineering <br>
+                Concn. in Machine Learning & Computer Vision
+              </p>
             </div>
           </div>
+
+          <br>
+          <hr>
+          <h1 class="anchor" id="bio-anchor"> </h1>
+          <h2>About Me</h2>
+          <p>
+            I am a scientist doing AI research in Boston, and graduated with my BS and MS from Northeastern University. I am fascinated by machine learning and computer vision, and quickly became fascinated by AI and its applications in intelligently performing tasks that previously could only be done by humans. My research interests lie in improving deep learning and computer vision methods in order to develop AI that can learn as efficiently or even better than a human learner.
+          </p>
+          <br>
+          <hr>
+          <h1 class="anchor" id="research-anchor"> </h1>
+          <h2>Research</h2>
+          <br>
+          <!--- MASK RCNN -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/mask_rcnn_robust_detections.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Automated Artificial Dataset Generation for Mask R-CNN </span>
+                <br><br>
+                <a class="proj" href="portfolio/maskrcnn.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!--- PERSON DECRIPTION -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/robocup_icon.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Person Detection/Description using Deep Learning </span>
+                <br><br>
+                <a class="proj" href="portfolio/person_descrip.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!--- NLP -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/task_discretizer/cmd5.png" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">NLP Robot Tasks Discretization</span>
+                <br><br>
+                <a class="proj" href="portfolio/task_discretizer.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!--- AUTOENCODER -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/dgm.png" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Convolutional Autoencoders (Basic, Residual, Variational)</span>
+                <br><br>
+                <a class="proj" href="dlt/deep_generative_models.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!--- YOLO -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/yolov2.PNG" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Object Detection with YOLO</span>
+                <br><br>
+                <a class="proj" href="portfolio/yolov2.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!--- LANE DETECTION -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="http://i.imgur.com/k3hsNwu.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Lane Detection with OpenCV</span>
+                <br><br>
+                <a class="proj" href="portfolio/lane_detection.html">Project Page</a>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <h1 class="anchor" id="tutorial-anchor"> </h1>
+          <h2>Tutorials</h2>
+          <br>
+          <!-- Advanced deep generative models -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="https://github.com/naokiyokoyama/website_media/raw/master/variational_autoencoder_demo.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Deep Generative Convolutional Models</span>
+                <br><br>
+                <a class="proj" href="dlt/deep_generative_models.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- GANs -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/gan.png" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Generative Adversarial Networks</span>
+                <br><br>
+                <a class="proj" href="dlt/gan.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Autoencoders -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/ae.png" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Autoencoders</span>
+                <br><br>
+                <a class="proj" href="dlt/autoencoder.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Obj Detect -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/objdet.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Object Detection</span>
+                <br><br>
+                <a class="proj" href="dlt/objdet.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Convolutional Neural Nets -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/cnn.gif" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Convolutional Neural Nets</span>
+                <br><br>
+                <a class="proj" href="dlt/cnn.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Activation Functions -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/dlt_icons/af.gif" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Activation Functions</span>
+                <br><br>
+                <a class="proj" href="dlt/activation_functions.html">Project Page</a>
+            </div>
+          </div>
+          <br>
+          <hr>
+          <h1 class="anchor" id="side-anchor"> </h1>
+          <h2>Side Projects</h2>
+          <br>
+          <!-- Wifi Smart Lock -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="https://i.imgur.com/gttU2yC.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Wifi Smart Lock</span>
+                <br><br>
+                <a class="proj" href="portfolio/smartlock.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Homemade 3-Axis Gimbal -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/bldcdriver.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Homemade 3-Axis Gimbal</span>
+                <br><br>
+                <a class="proj" href="portfolio/gimbal.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Plant Watering Robot -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="http://i.imgur.com/u6YQq6y.webm" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Autonomous Plant Watering Robot</span>
+                <br><br>
+                <a class="proj" href="portfolio/waterbunny.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Parallel Parking Robot -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="http://i.imgur.com/Gjb1Xmc.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Autonomous Parallel Parking Robot</span>
+                <br><br>
+                <a class="proj" href="portfolio/robot_car.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Homemade Quadcopter! -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/quad.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Homemade Quadcopter!</span>
+                <br><br>
+                <a class="proj" href="portfolio/quadcopter.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Lazy Light Switch v2 -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="http://i.imgur.com/QuXYiJz.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Lazy Light Switch v2</span>
+                <br><br>
+                <a class="proj" href="portfolio/lightswitch2.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Custom 3D Printer-->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/3Dprinterv2.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Custom 3D Printer</span>
+                <br><br>
+                <a class="proj" href="portfolio/3Dprinterv2.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Homemade $200 3D Printer -->
+          <div class="row">
+            <div class="col-sm-8">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="http://i.imgur.com/N2NKlrs.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Homemade $200 3D Printer</span>
+                <br><br>
+                <a class="proj" href="portfolio/3Dprinter.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- IR Smart Home -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/irsmarthome.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">IR Smart Home System</span>
+                <br><br>
+                <a class="proj" href="portfolio/irsmarthome.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Website -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/website.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Previous Website</span>
+                <br><br>
+                <a class="proj" href="portfolio/website.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- SmileLock -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/sl.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">SmileLock</span>
+                <br><br>
+                <a class="proj" href="portfolio/smilelock.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- College Workshop Instructor -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/sherman.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">College Workshop Instructor</span>
+                <br><br>
+                <a class="proj" href="portfolio/sherman.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Hackathons -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/coffee.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Hackathons</span>
+                <br><br>
+                <a class="proj" href="portfolio/hackathons.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Lazy Light Switch -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/lightswitch.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Lazy Light Switch</span>
+                <br><br>
+                <a class="proj" href="portfolio/lightswitch.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Pavlok -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/pavlok.png" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Pavlok</span>
+                <br><br>
+                <a class="proj" href="portfolio/pavlok.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- cience Olympiad Robot Arms -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/ra.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Science Olympiad Robot Arms</span>
+                <br><br>
+                <a class="proj" href="portfolio/robot_arm.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- AnemoSlips (Team Leader) -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/anemoslips.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">AnemoSlips (Team Leader)</span>
+                <br><br>
+                <a class="proj" href="portfolio/anemoslips.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- FRC Team 694 -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/frc.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">FRC Team 694</span>
+                <br><br>
+                <a class="proj" href="portfolio/frc.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- FLL Robotics Teacher -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/fll.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">FLL Robotics Teacher</span>
+                <br><br>
+                <a class="proj" href="portfolio/fll.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Research Assistant at CenSSIS -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/censsis.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Research Assistant at CenSSIS</span>
+                <br><br>
+                <a class="proj" href="portfolio/censsis.html">Project Page</a>
+            </div>
+          </div>
+          <hr>
+          <!-- Mechatronics at NYCCT -->
+          <div class="row">
+            <div class="col-sm-8">
+                <img src="img/portfolio_icons/mechatronics.jpg" width="100%">
+            </div>
+            <div class="col-sm-4">
+                <span class="subhead">Mechatronics at NYCCT</span>
+                <br><br>
+                <a class="proj" href="portfolio/mechatronics_lab.html">Project Page</a>
+            </div>
+          </div>
         </div>
+        <div class="col-md-2"></div>
       </div>
-    </section>
-    <section style="height: 100%; z-index:-1000;" id="trigger"></section>
-    
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src="js/jquery.fadethis.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/landing.js"></script>
+    </div>  
     <script src="js/bootstrap.js"></script>
   </body>
 </html>
