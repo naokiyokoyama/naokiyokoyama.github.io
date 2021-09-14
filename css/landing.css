@@ -37,7 +37,7 @@ hr {
   margin-top: 1rem;
   margin-bottom: 0.5rem;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 .proj{
   box-sizing: content-box;
@@ -48,7 +48,7 @@ hr {
   font-size:20px;
   text-align: left;
 }
-.advisors{
+.body-size{
   font-family: 'Heebo';
   font-size: 17px;
   color: black;
