@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html >
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8">
 
@@ -23,7 +23,18 @@
         text-align: center;
       }
       a {
-        text-decoration: none; /* Remove underlines from links */
+        font-size: 15px;
+        color: #000000;
+      }
+      /* mouse over link */
+      a:hover {
+        color: #000000;
+        text-decoration: none;
+      }
+      .proj{
+        box-sizing: content-box;
+        border: solid black 1px;
+        padding: 5px;
       }
     </style>
     <!--Scripts-->
@@ -76,6 +87,15 @@
 
 
           <hr>
+          <div style="text-align: center">
+            <a class="proj" style="text-decoration: none; font-size: 18px;text-align: center;" href="https://openreview.net/pdf?id=gdw1zUTABk">
+               Paper
+            </a>
+            &ensp;
+            <a class="proj" style="text-decoration: none; font-size: 18px;text-align: center;" href="#bibtex">
+               BibTex
+            </a>
+          </div>
 
 
           <div style="text-align: center;">
@@ -98,7 +118,7 @@
             <!-- MICROWAVE DEMO -->
             <h3>Target object: "microwave"</h3>
             <p>Text prompt: <i>"Seems like there's a microwave ahead."</i></p>
-              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
               <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/5.0_microwave_h265.mp4" type="video/mp4; codecs=hevc"/>
               <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/5.0_microwave.mp4" type="video/mp4"/>
             </video>
@@ -129,7 +149,98 @@
             <br>
           </div>
 
-          <br><hr><br><br><br><br>
+
+          <br><hr><br>
+
+
+          <div style="text-align: center;">
+            <h2>Simulation success examples</h2>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "toilet"</h3>
+            <p>Text prompt: <i>"Seems like there's a toilet ahead."</i></p>
+              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/toilet-episode=21-ckpt=0-distance_to_goal=0.03-success=1.00-spl=0.86-soft_spl=0.86-distance_to_goal_reward=-0.00-traveled_stairs=0.00-yaw=30.00-target_detected=1.00-stop_called=1.00-start_yaw=-0.14.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "bed"</h3>
+            <p>Text prompt: <i>"Seems like there's a bed ahead."</i></p>
+              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/bed-episode=24-ckpt=0-distance_to_goal=0.04-success=1.00-spl=0.84-soft_spl=0.84-distance_to_goal_reward=-0.00-traveled_stairs=0.00-yaw=60.00-target_detected=1.00-stop_called=1.00-start_yaw=-1.99.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "chair"</h3>
+            <p>Text prompt: <i>"Seems like there's a chair ahead."</i></p>
+              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/chair-episode=76-ckpt=0-distance_to_goal=0.04-success=1.00-spl=0.82-soft_spl=0.81-distance_to_goal_reward=-0.00-traveled_stairs=0.00-yaw=150.00-target_detected=1.00-stop_called=1.00-start_yaw=-1.62.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+          </div>
+
+
+          <br><hr><br>
+
+
+          <div style="text-align: center;">
+            <h2>Simulation failure examples</h2>
+            <p>
+              <i>VLFM does not yet filter its detections using other visual cues from the environment, and is thus still
+                sensitive to false positives outputted by the detector.</i>
+            </p>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "tv"</h3>
+            <p>Text prompt: <i>"Seems like there's a tv ahead."</i></p>
+              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/tv-episode=4-ckpt=0-distance_to_goal=19.35-success=0.00-spl=0.00-soft_spl=0.00-distance_to_goal_reward=-0.00-traveled_stairs=0.00-yaw=150.00-target_detected=1.00-stop_called=1.00-start_yaw=-0.04.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "bed"</h3>
+            <p>Text prompt: <i>"Seems like there's a bed ahead."</i></p>
+              <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/bed-episode=2-ckpt=0-distance_to_goal=0.83-success=0.00-spl=0.00-soft_spl=0.22-distance_to_goal_reward=-0.00-traveled_stairs=0.00-yaw=30.00-target_detected=1.00-stop_called=1.00-start_yaw=2.12.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <p>
+              <i>
+                We have found that VLFM can also be sensitive to environments that do not feature many visual
+                semantics cues relating to the object, such as homogeneous office environments where it may be
+                difficult to find a toilet from a far distance.
+              </i>
+            </p>
+          </div>
+
+
+          <br><hr><br>
+
+
+          <div style="text-align: center;">
+            <h3 id="bibtex">BibTex:</h3id>
+          </div>
+          <pre style="background-color: #f0f0f0;"><code>@misc{yokoyama2023vlfm,
+  title={VLFM: Vision-Language Frontier Maps for Zero-Shot Semantic Navigation},
+  author={Naoki Yokoyama and Sehoon Ha and Dhruv Batra and Jiuguang Wang and Bernadette Bucher},
+  howpublished={Workshop on Language and Robot Learning, CoRL 2023},
+  year={2023},
+  note={Atlanta, GA, USA}
+}</code></pre>
+
+          <br><hr>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><br><br><br>
 
           <div class="col-md-1"></div>
       </div>
