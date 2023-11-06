@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0;url=../portfolio/vlfm">
     <title>Redirecting...</title>
+    <style>
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="../portfolio/vlfm">click here</a>.</p>
+    <p id="message" class="hidden">If you are not redirected, <a href="../portfolio/vlfm">click here</a>.</p>
+    <script>
+        // Wait for 5 seconds (5000 milliseconds), then show the message
+        setTimeout(function() {
+            document.getElementById('message').className = '';
+        }, 5000);
+    </script>
 </body>
 </html>

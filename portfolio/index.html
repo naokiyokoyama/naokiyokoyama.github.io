@@ -1,378 +1,166 @@
 <!DOCTYPE html>
-<html>
+<html >
   <head>
+    <meta charset="UTF-8">
+
     <title>Naoki Yokoyama</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Favicon-->
-    <link rel="icon" type="../image/png" href="../img/favicon.png">
+    <link rel="icon" type="../image/png" href="img/favicon.png">
     <!--CSS Links-->
-  <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/portfolio_main.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/landing.css">
     <!--Scripts-->
-  <script type="text/javascript" src="../js/analytics.js"></script>
-    <script type="text/javascript" src="../js/jquery-2.1.3.min.js"> </script>
-  <script src="../js/prefixfree2.min.js"></script>
-    <script type="text/javascript" src="../js/portfolio.js"></script>
+    <script type="text/javascript" src="js/analytics.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+
   </head>
+
   <body>
 
-    <!--Navbar begins-->
-   <div class="navbar2 hidden-xs">
-    <div align="center">
-    <ul>
-      <a href="../index.html"><li>Home</li></a>
-      <a href="../dlt/index.html"><li>Tutorials</li></a>
-      <a href="../portfolio/index.html"><li>Portfolio</li></a>
-      <a href="../about_me.html"><li>About Me</li></a>
-      <a href="website.html"><li>This Site</li></a>
-      <a href="../img/cv.pdf"><li>CV</li></a>
-      <a href="../cs.html" id="spcl"><li>Contact</li></a>
-    </ul>
-    </div>
-  </div>
-
-  
-  <div class="navbar navbar-inverse navbar-static-top visible-xs">
     <div class="container">
-    <div class="navbar-header">
-    <a href="#" class="navbar-brand">Naoki Yokoyama</a>
-    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button></div>
-    <div class="collapse navbar-collapse navHeaderCollapse">
-      <ul class="nav navbar-nav navbar-left">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../dlt/index.html">Tutorials</a></li>
-      <li><a href="../portfolio/index.html">Portfolio</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-        <li><a href="../about_me.html">The Author</a></li>
-        <li><a href="portfolio/website.html">This Website</a></li>
-        </ul>
-      </li>
-      <li><a href="../cs.html">Contact</a></li>
-      </ul>
-    </div>
-    </div>
-  </div>
-  <!--Navbar ends-->
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
 
-    <div class="row">
-      <div class="col-lg-1"></div>
-      <div class="col-lg-10">
-        <div class="panel panel-default">
-          <div class="panel-body">
+          <a class="title" href="../index.html">Naoki Yokoyama</a>
+          <hr>
+          <a href="../index.html#bio">About Me</a> &ensp;
+          <a href="https://drive.google.com/file/d/1j0MELX5lTbUaxXdSLYF2bRDGz9wDlom2/view">CV</a> &ensp;
+          <a href="../index.html#research">Research</a> &ensp;
+          <a href="https://github.com/naokiyokoyama">GitHub</a> &ensp;
+          <a href="https://scholar.google.com/citations?user=26MOv8wAAAAJ&hl=en">Google Scholar</a> &ensp;
+          <a href="/portfolio/index.html">Projects</a> &ensp;
+          <a href="../photos.html">Photography</a> &ensp;
+          <br><br>
 
-            <div class="page-header">
-              <center>
-                <h3>Portfolio</h3>
-              </center>
+          <h2>Older Projects</h2>
+          <p>From undergrad and high school.</p>
+          <br>
+          <!--- Waterbunny -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/old_projects/waterbunny.mp4"/>
+                </video>
+              </div>
             </div>
-
-            <div id="Container">
-              <center>
-              <div class="item mix ind" data-date-order="34">
-                <div class="imagem">
-                <a href="highres_srgan.html">
-                <img class="mockup" src="../img/portfolio_icons/style_gan_thumbnail.png" height="250" width="375">
-                <p class="icon-descrip">High-res SRGAN Experiments using Recent GAN Research</p>
-                </a>
-                </div>
-                <p class="icon-caption">High Resolution SRGAN</p> 
-              </div>
-
-              <div class="item mix ind" data-date-order="34">
-                <div class="imagem">
-                <a href="../dlt/deep_generative_models.html">
-                <img class="mockup" src="../img/dlt_icons/dgm.png" height="250" width="375">
-                <p class="icon-descrip">Denoising Images and Latent Space Interpolation</p>
-                </a>
-                </div>
-                <p class="icon-caption">Convolutional Autoencoders</p>  
-              </div>
-
-              <div class="item mix" data-date-order="34">
-                <div class="imagem">
-                <a href="maskrcnn.html">
-                <img class="mockup" src="../img/portfolio_icons/maskrcnn.jpg" height="250" width="375">
-                <p class="icon-descrip">Automated Artificial Dataset Generation for Mask R-CNN</p>
-                </a>
-                </div>
-                <p class="icon-caption">Object Segmentation w/Mask R-CNN</p>  
-              </div>
-
-              <div class="item mix robotics" data-date-order="34">
-                <div class="imagem">
-                <a href="person_descrip.html">
-                <img class="mockup" src="../img/portfolio_icons/robocup_icon.jpg" height="250" width="375">
-                <p class="icon-descrip">Describing People using Deep Learning</p>
-                </a>
-                </div>
-                <p class="icon-caption">Person Detection/Classification</p>
-              </div>
-
-              <div class="item mix robotics" data-date-order="34">
-                <div class="imagem">
-                <a href="task_discretizer.html">
-                <img class="mockup" src="../img/task_discretizer/cmd5.png" height="250" width="375">
-                <p class="icon-descrip">Commanding Robots to Perform Tasks Verbally</p>
-                </a>
-                </div>
-                <p class="icon-caption">NLP Robot Tasks Discretization</p>
-              </div>
-
-              <div class="item mix robotics" data-date-order="34">
-                <div class="imagem">
-                <a href="yolov2.html">
-                <img class="mockup" src="../img/portfolio_icons/yolov2.PNG" height="250" width="375">
-                <p class="icon-descrip">Automated Artificial Dataset Generation for YOLOv2</p>
-                </a>
-                </div>
-                <p class="icon-caption">Object Detection w/YOLOv2</p>
-              </div>
-
-              <div class="item mix robotics" data-date-order="30">
-                <div class="imagem">
-                <a href="lane_detection.html">
-                <img class="mockup" src="../img/portfolio_icons/lane_detection.jpg" height="250" width="375">
-                <p class="icon-descrip">Used Python and OpenCV to detect lanes from video</p>
-                </a>
-                </div>
-                <p class="icon-caption">Lane Detection w/OpenCV</p>
-              </div>
-
-              <div class="page-header">
-                <center>
-                  <h3>Other Past Projects</h3>
-                </center>
-              </div>
-
-
-              <div class="item mix robotics ind" data-date-order="33">
-                <div class="imagem">
-                <a href="irsmarthome.html">
-                <img class="mockup" src="../img/portfolio_icons/irsmarthome.jpg" height="250" width="375">
-                <p class="icon-descrip">Smart home system using Wifi, IR, and Raspberry Pi Zero W</p>
-                </a>
-                </div>
-                <p class="icon-caption">IR Smart Home System</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="33">
-                <div class="imagem">
-                <a href="3Dprinterv2.html">
-                <img class="mockup" src="../img/portfolio_icons/3Dprinterv2.jpg" height="250" width="375">
-                <p class="icon-descrip">Designing a cheap, high-quality 3D printer (Ongoing Project)</p>
-                </a>
-                </div>
-                <p class="icon-caption">Custom 3D Printer</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="32">
-                <div class="imagem">
-                <a href="smartlock.html">
-                <img class="mockup" src="https://i.imgur.com/gttU2yC.jpg" height="250" width="375">
-                <p class="icon-descrip">Built a Wifi enabled Smart Lock</p>
-                </a>
-                </div>
-                <p class="icon-caption">Wifi Smart Lock</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="31">
-                <div class="imagem">
-                <a href="gimbal.html">
-                <img class="mockup" src="../img/portfolio_icons/bldcdriver.jpg" height="250" width="375">
-                <p class="icon-descrip">Designing a DIY 3-axis gimbal (Ongoing Project)</p>
-                </a>
-                </div>
-                <p class="icon-caption">Homemade 3-Axis Gimbal</p>
-              </div>
-              
-              <div class="item mix robotics ind" data-date-order="27">
-                <div class="imagem">
-                <a href="waterbunny.html">
-                <img class="mockup" src="../img/portfolio_icons/waterbunny.jpg" height="250" width="375">
-                <p class="icon-descrip">Autonomous plant watering robot with closed control loops</p>
-                </a>
-                </div>
-                <p class="icon-caption">Plant Watering Robot</p>
-              </div>
-              
-              <div class="item mix robotics" data-date-order="32">
-                <div class="imagem">
-                <a href="robot_car.html">
-                <img class="mockup" src="../img/portfolio_icons/robot_car.jpg" height="250" width="375">
-                <p class="icon-descrip">Autonomously parks using an IMU and sonars on servos</p>
-                </a>
-                </div>
-                <p class="icon-caption">Parallel Parking Robot</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="16">
-                <div class="imagem">
-                <a href="quadcopter.html">
-                <img class="mockup" src="../img/portfolio_icons/quad.jpg" height="250">
-                <p class="icon-descrip">Self-stabilizing quadcopter coded from scratch</p>
-                  </a>
-                </div>
-                <p class="icon-caption">Homemade Quadcopter!</p>
-              </div>
-
-              <div class="item mix ind" data-date-order="26">
-                <div class="imagem">
-                <a href="website.html">
-                <img class="mockup" src="../img/website.jpg" height="250">
-                <p class="icon-descrip">Learned<br>HTML/CSS/JS to make this very site!</p>
-                </a>
-                </div>
-                <p class="icon-caption">This Website</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="29">
-                <div class="imagem">
-                <a href="lightswitch2.html">
-                <img class="mockup" src="../img/portfolio_icons/lightswitch2.jpg" height="250" width="375">
-                <p class="icon-descrip">Revised Light<br>Switch-er</p>
-                </a>
-                </div>
-                <p class="icon-caption">Lazy Light Switch v2</p>
-              </div>
-
-
-              <div class="item mix robotics" data-date-order="28">
-                <div class="imagem">
-                <a href="smilelock.html">
-                <img class="mockup" src="../img/portfolio_icons/sl.jpg" height="250" width="375">
-                <p class="icon-descrip">Made a mock-up of a wireless door locking system</p>
-                </a>
-                </div>
-                <p class="icon-caption">SmileLock</p>
-              </div>
-
-              <div class="item mix ind" data-date-order="25">
-                <div class="imagem">
-                <a href="3Dprinter.html">
-                <img class="mockup" src="../img/portfolio_icons/3Dprinter.jpg" height="250" width="375">
-                <p class="icon-descrip">Built a personal <br>3D printer <br>for only $200</p>
-                </a>
-                </div>
-                <p class="icon-caption">Homemade $200 3D Printer</p>
-              </div>
-
-              <div class="item mix robotics teaching" data-date-order="21">
-                <div class="imagem">
-                <a href="sherman.html">
-                <img class="mockup" src="../img/portfolio_icons/sherman.jpg" height="250">
-                <p class="icon-descrip">Teaching various workshops to other students on campus</p>
-                </a>
-                </div>
-                <p class="icon-caption">College Workshop Instructor</p>
-              </div>
-
-              <div class="item mix" data-date-order="27.9">
-                <div class="imagem">
-                <a href="hackathons.html">
-                <img class="mockup" src="../img/portfolio_icons/coffee.jpg" height="250">
-                <p class="icon-descrip">Hackathons I've participated in</p>
-                  </a>
-                </div>
-                <p class="icon-caption">Hackathons</p>
-              </div>
-
-              <div class="item mix robotics ind" data-date-order="26">
-                <div class="imagem">
-                <a href="lightswitch.html">
-                <img class="mockup" src="../img/portfolio_icons/lightswitch.jpg" height="250">
-                <p class="icon-descrip">Turns off room light with claps or any IR remote</p>
-                </a>
-                </div>
-                <p class="icon-caption">Lazy Light Switch</p>
-              </div>
-
-              <div class="item mix robotics" data-date-order="22">
-                <div class="imagem">
-                <a href="pavlok.html">
-                <img class="mockup" src="../img/portfolio_icons/pavlok.png" height="250" width="375">
-                <p class="icon-descrip">Interned at a company making a shocking wearable</p>
-                </a>
-                </div>
-                <p class="icon-caption">Pavlok</p>
-              </div>
-
-              <div class="item mix robotics ind teaching" data-date-order="8">
-                <div class="imagem">
-                <a href="robot_arm.html">
-                <img class="mockup" src="../img/portfolio_icons/ra.jpg" height="250">
-                <p class="icon-descrip">Autonomous arms featuring homemade circuits and code</p>
-                  </a>
-                </div>
-                <p class="icon-caption">Science Olympiad Robot Arms</p>
-              </div>
-
-              <div class="item mix teaching" data-date-order="22">
-                <div class="imagem">
-                <a href="anemoslips.html">
-                <img class="mockup" src="../img/portfolio_icons/anemoslips.jpg" height="250">
-                <p class="icon-descrip">Third place winner of national mock startup competition</p>
-                  </a>
-                </div>
-                <p class="icon-caption">AnemoSlips (Team Leader)</p>
-              </div>
-
-              <div class="item mix robotics teaching" data-date-order="0">
-                <div class="imagem">
-                <a href="frc.html">
-                <img class="mockup" src="../img/portfolio_icons/frc.jpg" height="250">
-                <p class="icon-descrip">Built robots through high school. StuyPulse!</p>
-                  </a>
-                </div>
-                <p class="icon-caption">FRC Team 694</p>
-              </div>
-
-              <div class="item mix teaching robotics" data-date-order="4">
-                <div class="imagem">
-                <a href="fll.html">
-                <img class="mockup" src="../img/portfolio_icons/fll.jpg" height="250">
-                <p class="icon-descrip">Taught elementary students to program autonomous robots</p>
-                  </a>
-                </div>
-                <p class="icon-caption">FLL Robotics Teacher</p>
-              </div>
-
-              <div class="item mix" data-date-order="20">
-                <div class="imagem">
-                <a href="censsis.html">
-                <img class="mockup" src="../img/portfolio_icons/censsis.jpg" height="250">
-                <p class="icon-descrip">Conducted research on optical microscopy systems</p>
-                  </a>
-                </div>
-                <p class="icon-caption">Research Assistant at CenSSIS</p>
-              </div>
-
-              <div class="item mix robotics" data-date-order="6">
-                <div class="imagem">
-                <a href="mechatronics_lab.html">
-                <img class="mockup" src="../img/portfolio_icons/mechatronics.jpg" height="250">
-                <p class="icon-descrip">Self-navigating robot using closed control loops</p>
-                  </a>
-                </div>
-                <p class="icon-caption">Mechatronics at NYCCT</p>
-              </div>
-
-            </center>
+            <div class="col-sm-6">
+              <span class="subhead">Autonomous plant watering robot with closed loop feedback control</span>
+              <br>
+              <br><br>
+              <a class="proj" href="waterbunny.html">Project Page</a>
+              <br><br>
             </div>
           </div>
+          <hr>
+          <!--- Designed 3D printer -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <img src="../img/portfolio_icons/3Dprinterv2.jpg" width=100%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Designed a cheap, high-quality 3D printer</span>
+              <br>
+              <br><br>
+              <a class="proj" href="3Dprinterv2.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          <!--- Lazy light switch v2 -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/old_projects/lightswitchv2.mp4"/>
+                </video>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Lazy light switch controller using IR proximity sensing and remote control</span>
+              <br>
+              <br><br>
+              <a class="proj" href="lightswitch2.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          <!--- WiFi Smart Lock -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <img src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/old_projects/wifilock.jpeg" width=100%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Built a WiFi-enabled smart lock w/camera</span>
+              <br>
+              <br><br>
+              <a class="proj" href="smartlock.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          <!--- Homemade 3D printer -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <video playsinline autoplay muted loop style="width: 100%" class="webby">
+                  <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/old_projects/homemade_printer.mp4"/>
+                </video>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Built a personal 3D printer for only $200</span>
+              <br>
+              <br><br>
+              <a class="proj" href="3Dprinter.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          <!--- Quadcopter -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <img src="../img/portfolio_icons/quad.jpg" width=100%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Self-stabilizing quadcopter coded from scratch</span>
+              <br>
+              <br><br>
+              <a class="proj" href="quadcopter.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+          <!--- Robot Arms -->
+          <div class="row">
+            <div class="col-sm-6">
+              <div style="text-align: center;">
+                <img src="../img/portfolio_icons/ra.jpg" width=100%>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <span class="subhead">Autonomous robot arms featuring circuits and code designed from scratch</span>
+              <br>
+              <br><br>
+              <a class="proj" href="robot_arm.html">Project Page</a>
+              <br><br>
+            </div>
+          </div>
+          <hr>
+
         </div>
+        <div class="col-md-1"></div>
       </div>
     </div>
-
-    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
   </body>
 </html>
