@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>HM3D-OVON: A Dataset and Benchmark for Open-Vocabulary Object Goal Navigation</title>
+
+    <!--Favicon-->
+    <link rel="icon" type="../image/png" href="../img/favicon.png">
+    <!--CSS Links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Heebo:light">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+
+
+    <style>
+      .author-img {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+      }
+      .font-awesome {
+        margin-top: 10px;
+        text-align: center;
+      }
+      a {
+        font-size: 15px;
+        color: #000000;
+      }
+      /* mouse over link */
+      a:hover {
+        color: #000000;
+        text-decoration: none;
+      }
+      .proj{
+        box-sizing: content-box;
+        border: solid black 1px;
+        padding: 5px;
+      }
+    </style>
+    <!--Scripts-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+
+          <br><br>
+
+          <div class="page-header">
+            <div style="text-align: center;">
+              <h1>HM3D-OVON: A Dataset and Benchmark for Open-Vocabulary Object Goal Navigation</h1>
+            </div>
+          </div>
+
+          <div class="author-info">
+            <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-2 text-center">
+                <div class="font-awesome"><a href="../../index.html" target="_blank">Naoki Yokoyama</a></div>
+              </div>
+              <div class="col-sm-2 text-center">
+                <div class="font-awesome"><a href="https://ram81.github.io/" target="_blank">Ram Ramrakhya</a></div>
+              </div>
+              <div class="col-sm-2 text-center">
+                <div class="font-awesome"><a href="https://abhishekdas.com/" target="_blank">Abhishek Das</a></div>
+              </div>
+              <div class="col-sm-2 text-center">
+                <div class="font-awesome"><a href="https://faculty.cc.gatech.edu/~dbatra/" target="_blank">Dhruv Batra</a></div>
+              </div>
+              <div class="col-sm-2 text-center">
+                <div class="font-awesome"><a href="https://faculty.cc.gatech.edu/~sha9/" target="_blank">Sehoon Ha</a></div>
+              </div>
+              <div class="col-sm-1"></div>
+            </div>
+          </div>
+
+
+
+          <hr>
+          <div style="text-align: center">
+<!--             <a class="btn btn-primary" href="https://arxiv.org/abs/2312.03275" role="button">
+              <i class="ai ai-arxiv fa-1x" style="color:white;"></i>
+              arXiv
+            </a> -->
+<!--             <a class="btn btn-primary" href="#bibtex" role="button">
+              <i class="fa-solid fa-book" style="color:white;"></i>
+              BibTex
+            </a> -->
+            <a class="btn btn-primary" href="https://github.com/naokiyokoyama/ovon" role="button">
+              <i class="fab fa-github" style="color:white;"></i>
+              Code
+            </a>
+          </div>
+
+          <br>
+<!--           <p style="text-align: center;">
+            insert conference name here: ex. International Conference on Robotics and Automation (ICRA), 20XX
+            <br>
+            insert workshop name here is applicable
+            ex. Workshop on Language and Robot Learning @ CoRL, 2023
+          </p> -->
+
+
+          <div style="text-align: center;">
+            <h2>Main Video</h2>
+            <video controls preload="auto" style="width: 100%; height: auto;">
+              <!-- <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/vlfm/VLFM_h265.mp4" type="video/mp4; codecs=hevc"> -->
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/OVON%20IROS%20compressed.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <br><hr><br>
+
+
+          <div style="text-align: center;">
+            <h2>Success examples</h2>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "couch"</h3>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=163-spl=0.58-scid=00824-Dd4bFSTQ8gi-cat-cat=couch.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "bathroom cabinet"</h3>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=2093-spl=0.35-scid=00873-bxsVRursffK-cat-cat=bathroom%20cabinet.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "bed"</h3>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=2433-spl=0.67-scid=00849-a8BtkwhxdRV-cat-cat=bed.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "computer desk"</h3>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=751-spl=0.58-scid=00839-zt1RVoi7PcG-cat-cat=computer%20desk.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+            <!-- SIM VIDEO -->
+            <h3>Target object: "hanging clothes"</h3>
+            <video controls preload="auto" style="width: 100%; height: auto;" autoplay muted loop>
+              <source src="https://raw.githubusercontent.com/naokiyokoyama/website_media/master/imgs/ovon/ep=7601-spl=0.29-scid=00802-wcojb4TFT35-cat-cat=hanging%20clothes.mp4" type="video/mp4"/>
+            </video>
+            <br>
+            <br>
+            <br>
+
+
+          <br><hr><br>
+
+          
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
