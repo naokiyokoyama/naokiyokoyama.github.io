@@ -6,3 +6,4 @@ vendor
 todo.txt
 *.DS_Store
 **/.DS_Store
+scripts/photography/photos/
