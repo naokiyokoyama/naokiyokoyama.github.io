@@ -24,3 +24,4 @@ echo "Generating photos.yaml..."
 python generate_photos_yaml.py photos/compressed_resized_images/ photos.yaml &&
 echo "Generating photos.html..."
 python generate_photos_html.py -c 4 $1
+echo "Add captions to photos.yaml for any newly added photos."
