@@ -17,13 +17,18 @@ def create_thumbnail(image_path, width, height):
             print(f"Thumbnail for {image_path} already exists. Skipping...")
             return
 
+    desired_aspect_ratio = width / height
+
     # Read the image
     image = cv2.imread(image_path)
     if image is None:
         raise ValueError(f"Could not open or find the image {image_path}.")
+    if image.shape[0] > image.shape[1]:
+        # Add blurry background to any images that are taller than they are long
+        image = add_blurred_background(
+            image_path, desired_aspect_ratio, blur_strength=80
+        )
 
-    # Calculate aspect ratios
-    desired_aspect_ratio = width / height
     image_aspect_ratio = image.shape[1] / image.shape[0]
 
     # Crop to the desired aspect ratio
@@ -62,6 +67,73 @@ def make_thumbnails_in_directory(directory, width, height):
 
     for image_path in images:
         create_thumbnail(str(image_path), width, height)
+
+
+def add_blurred_background(image_path, target_aspect_ratio=16 / 9, blur_strength=30):
+    """
+    Takes a portrait image and adds blurred side panels to match the target aspect ratio.
+
+    Args:
+        image_path: Path to the input image
+        target_aspect_ratio: Desired width/height ratio (default 16:9)
+        blur_strength: Strength of the Gaussian blur (default 30)
+
+    Returns:
+        Processed image with blurred background
+    """
+    # Read the image
+    img = cv2.imread(str(image_path))
+    if img is None:
+        raise ValueError(f"Could not read the image: {image_path}")
+
+    height, width = img.shape[:2]
+    current_ratio = width / height
+
+    # Only process if image is taller than it is wide
+    if current_ratio >= target_aspect_ratio:
+        print(f"Warning: Image {image_path} already has desired aspect ratio or wider")
+        return img
+
+    # Calculate new width needed to achieve target ratio
+    new_width = int(height * target_aspect_ratio)
+
+    # Create background by scaling original image to new width
+    scale_factor = new_width / width
+    temp_height = int(height * scale_factor)
+    background = cv2.resize(img, (new_width, temp_height))
+
+    # Apply strong blur to background
+    # Ensure kernel size is odd and at least 3
+    kernel_size = max(3, int(blur_strength * 2)) | 1  # Makes sure it's odd
+    background = cv2.GaussianBlur(background, (kernel_size, kernel_size), blur_strength)
+
+    # Crop background to match original height
+    if temp_height > height:
+        start_y = (temp_height - height) // 2
+        background = background[start_y : start_y + height]
+
+    # Calculate positions to place original image
+    x_offset = (new_width - width) // 2
+
+    # Create final composite
+    result = background.copy()
+    result[:, x_offset : x_offset + width] = img
+
+    return result
+
+
+def parse_ratio(ratio_str):
+    """Convert ratio string (e.g., '16:9' or '1.77') to float"""
+    try:
+        if ":" in ratio_str:
+            num, den = map(float, ratio_str.split(":"))
+            return num / den
+        return float(ratio_str)
+    except ValueError:
+        raise argparse.ArgumentTypeError(
+            f"Invalid ratio format: {ratio_str}. Use either ':' format (e.g., '16:9') "
+            "or decimal (e.g., '1.77')"
+        )
 
 
 if __name__ == "__main__":
